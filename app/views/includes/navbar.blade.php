@@ -10,24 +10,38 @@
 				<li class="has-dropdown">
 					<a href="#">About Us</a>
 					<ul class="dropdown">
-						<li><a href="/guidelines">Ministry Guidelines</a></li>
+						<li><a href="/ministry-guidelines">Ministry Guidelines</a></li>
 						<li><a href="/vision">Open Hand's Vision</a></li>
-						<li><a href="/statement">Statement of Faith</a></li>
+						<li><a href="/statement-of-faith">Statement of Faith</a></li>
 						<li><a href="/charter">Charter</a></li>
 					</ul>
 				</li>
-				<li><a href="/involved">Get Involved</a></li>
-				<li><a href="/faq">FAQ</a></li>
+				<li><a href="/get-involved">Get Involved</a></li>
+				<li><a href="/frequently-asked-questions">FAQ</a></li>
 			</ul>
 			
 			<ul class="right">
-				@if (Auth::check())
+				@if (Auth::check() && Auth::user()->isAdmin == 0)
 				<li class="has-dropdown">
 					<a href="#">Action</a>
 					<ul class="dropdown">
-						<li><a href="/database-add">Add</a></li>
-						<li><a href="/database-search">Search</a></li>
-						<li><a href="logout">Volunteer Logout</a></li>
+						<li><a href="/database/add">Add Guest</a></li>
+						<li><a href="/database/search">Search Guests</a></li>
+						<li class="divider"></li>
+						<li><a href="/logout">Volunteer Logout</a></li>
+					</ul>
+				</li>
+				@elseif (Auth::check() && Auth::user()->isAdmin == 1)
+				<li class="has-dropdown">
+					<a href="#">Action</a>
+					<ul class="dropdown">
+						<li><a href="/database/add">Add Guest</a></li>
+						<li><a href="/database/search">Search Guests</a></li>
+						<li class="divider"></li>
+						<li><a href="/database/admin/add">Add Volunteer</a></li>
+						<li><a href="/database/admin/show-all">Show All Volunteers</a></li>
+						<li class="divider"></li>
+						<li><a href="/logout">Admin Logout</a></li>
 					</ul>
 				</li>
 				@else

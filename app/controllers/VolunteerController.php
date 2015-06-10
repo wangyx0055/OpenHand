@@ -29,7 +29,7 @@ class VolunteerController extends BaseController
 			);
 
 			if (Auth::attempt($userdata)) { // if user is valid, send to database search page
-				return Redirect::to('/database-search');
+				return Redirect::to('/database/search');
 			} else { // if user is not valid, redirect to login page
 				return Redirect::to('/login');
 			}
@@ -59,9 +59,95 @@ class VolunteerController extends BaseController
 		$search = Input::get('search');
 		
 		// search database for id with corresponding last_name value
-		$results = Guest::like('last_name', $search)->get();
+		$results = Guest::where('last_name', 'LIKE', $search)->get();
 		
 		return View::make('pages.database.search')
 			->with('results', $results);
+	}
+	
+	/*
+	Name: store
+	Purpose: Store a new volunteer
+	*/
+	public function store()
+	{
+		// validation rules
+		$rules = array(
+			'first_name' => 'required',
+			'last_name' => 'required',
+			'email' => 'required|email',
+			'password' => 'required|min:3|confirmed',
+			'password_confirmation' => 'required|min:3'
+		);
+		
+		// check for valid details
+		$validator = Validator::make(Input::all(), $rules);
+	
+		if ($validator->fails()) { // if validation fails, redirect back to database-add
+			return Redirect::to('/database/admin/add')
+				->withErrors($validator);
+		} else { // if validation succesful, add new guest
+			$user = new User;
+			
+			// get guest data from form
+			$user->first_name = Input::get('first_name');
+			$user->last_name = Input::get('last_name');
+			$user->email = Input::get('email');
+			$user->password = Hash::Make(Input::get('password'));
+			$user->isAdmin = 0;
+			
+			$user->save();
+			
+			return Redirect::to('/database/admin/add');
+		}
+	}
+	
+	/*
+	Name: edit
+	Purpose: Return volunteer id to the webpage
+	*/
+	public function edit($id)
+	{
+		// find guest by id
+		$volunteer = User::find($id);
+		
+		return View::make('pages.database.admin.edit')
+            ->with('volunteer', $volunteer);
+	}
+	
+	/*
+	Name: update
+	Purpose: Update volunteer passed into the function
+	*/
+	public function update($id)
+	{
+		// validation rules
+		$rules = array(
+			'first_name' => 'required',
+			'last_name' => 'required',
+			'email' => 'required|email',
+			'password' => 'required|min:3|confirmed',
+			'password_confirmation' => 'required|min:3'
+		);
+		
+		// check for valid details
+		$validator = Validator::make(Input::all(), $rules);
+	
+		if ($validator->fails()) { // if validation fails, redirect back to database-add
+			return Redirect::to('volunteers/' . $value->id . '/edit')
+				->withErrors($validator);
+		} else { // if validation succesful, add new guest
+			$user = User::find($id);
+			
+			// get guest data from form
+			$user->first_name = Input::get('first_name');
+			$user->last_name = Input::get('last_name');
+			$user->email = Input::get('email');
+			$user->password = Hash::make(Input::get('password'));
+			
+			$user->save();
+			
+			return Redirect::to('/database/admin/show-all');
+		}
 	}
 }

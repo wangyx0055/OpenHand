@@ -15,13 +15,14 @@ class CreateUsersTable extends Migration {
 		Schema::create('users', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('name', 32);
-          	$table->string('username', 32);
+			$table->string('first_name', 32);
+          	$table->string('last_name', 32);
           	$table->string('email', 320);
          	$table->string('password', 64);
+			$table->char('isAdmin', 1);
 
-            // required for Laravel 4.1.26
-            $table->string('remember_token', 100)->nullable();
+            // required for Laravel 4.2
+            $table->rememberToken();
 			$table->timestamps();
 		});
 	}

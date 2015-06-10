@@ -47,7 +47,7 @@ class GuestController extends BaseController
 			
 			$guest->save();
 			
-			return Redirect::to('/database-search');
+			return Redirect::to('/database/search');
 		}
 	}
 	
@@ -69,7 +69,7 @@ class GuestController extends BaseController
 		$validator = Validator::make(Input::all(), $rules);
 	
 		if ($validator->fails()) { // if validation fails, redirect back to database-add
-			return Redirect::to('/database-add')
+			return Redirect::to('/database/add')
 				->withErrors($validator);
 		} else { // if validation succesful, add new guest
 			$guest = new Guest;
@@ -83,7 +83,7 @@ class GuestController extends BaseController
 			
 			$guest->save();
 			
-			return Redirect::to('/database-add');
+			return Redirect::to('/database/add');
 		}
 	}
 }

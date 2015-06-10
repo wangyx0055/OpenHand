@@ -8,9 +8,11 @@
 					<a href="#panel1">What is Open Hand?</a>
 					<div id="panel1" class="content">
 						Firstly, Open Hand is a ministry serving the Body of Christ by giving food, comforat, and support during difficult times-reminding them of the great love God has for them.</br>
-						Secondly, Open Hand serves those in need within the community.
+						Secondly, Open Hand serves those in need within the community.</br>
+						</br>
 						Volunteers serve with Christ's love and build relationships where the love, salvation, and provision of the Biblical Jesus can be clearly seen.
 						Our sole purpose is to please God by creaing an atmosphere where relationships can be built, needs are met, and those coming for food feel the love of Christ when they walk through the door.</br>
+						</br>
 						We do this through providing food.</br>
 					</div>
 				</li>

@@ -41,7 +41,7 @@
 @endif
 <div class="row">
 	<div class="small-12 columns">
-		Click <a href="/database-show">here</a> to see all guests
+		Click <a href="/database/show-all">here</a> to see all guests
 	</div>
 </div>
 @stop

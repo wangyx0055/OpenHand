@@ -44,6 +44,7 @@
 					<li>A separate, other than driver's license, proof of address, a recent letter or bill</li>
 					<li>Food cannot be given to more than one person from the same address, if you have a large family just tell us and we will accomodate</li>
 					<li><i>You must come in person for food</i>. There are no exceptions.</li>
+					<li><b>We do NOT require a statement saying you attend church nor do we require you to pray with us</b></li>
 				</ul>
 			</p>
 			<a class="close-reveal-modal" aria-label="Close">&#215;</a>

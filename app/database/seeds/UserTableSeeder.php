@@ -5,10 +5,11 @@ class UserTableSeeder extends Seeder
 	public function run()
 	{
 		User::create(array(
-		  'username' => 'test',
-		  'name' => 'test',
-		  'email' => 'openhand@example.com',
-		  'password' => Hash::Make('password'),
+			'first_name' => 'Austin',
+			'last_name' => 'Wheeler',
+			'email' => 'austin.g.wheeler@gmail.com',
+			'password' => Hash::Make('password'),
+			'isAdmin' => 1,
 		));
 	}
 }

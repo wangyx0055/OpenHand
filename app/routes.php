@@ -13,7 +13,7 @@ Route::get('/', function()
 Purpose: Redirect to guidelines page
 Uses: app/views/pages/guidelines.blade.php
 */
-Route::get('/guidelines', function()
+Route::get('/ministry-guidelines', function()
 {
 	return View::make('pages.guidelines');
 });
@@ -31,7 +31,7 @@ Route::get('/vision', function()
 Purpose: Redirect to statement page
 Uses: app/views/pages/statement.blade.php
 */
-Route::get('/statement', function()
+Route::get('/statement-of-faith', function()
 {
 	return View::make('pages.statement');
 });
@@ -40,7 +40,7 @@ Route::get('/statement', function()
 Purpose: Redirect to contact us page
 Uses: app/views/pages/contact.blade.php
 */
-Route::get('/contact', function()
+Route::get('/contact-us', function()
 {
 	return View::make('pages.contact');
 });
@@ -49,7 +49,7 @@ Route::get('/contact', function()
 Purpose: Redirect to get involved page
 Uses: app/views/pages/involved.blade.php
 */
-Route::get('/involved', function()
+Route::get('/get-involved', function()
 {
 	return View::make('pages.involved');
 });
@@ -67,7 +67,7 @@ Route::get('/charter', function()
 Purpose: Redirect to frequently asked questions page
 Uses: app/views/pages/faq.blade.php
 */
-Route::get('/faq', function()
+Route::get('/frequently-asked-questions', function()
 {
 	return View::make('pages.faq');
 });
@@ -85,7 +85,7 @@ Route::get('/login', function()
 Purpose: Redirect to add to database page
 Uses: app/views/pages/database/add.blade.php
 */
-Route::get('/database-add', function()
+Route::get('/database/add', function()
 {
 	if (Auth::check()) // if valid user logged in, redirect to database add page
 		return View::make('pages.database.add');
@@ -94,10 +94,10 @@ Route::get('/database-add', function()
 });
 
 /*
-Purpose: Redirect to search data page
+Purpose: Redirect to search database page
 Uses: app/views/pages/database/search.blade.php
 */
-Route::get('/database-search', function()
+Route::get('/database/search', function()
 {
 	$results = '';
 	
@@ -109,16 +109,55 @@ Route::get('/database-search', function()
 });
 
 /*
-Purpose: Redirect to view all data page
+Purpose: Redirect to view all database page
 Uses: app/views/pages/database/show.blade.php
 */
-Route::get('/database-show', function()
+Route::get('/database/show-all', function()
 {
 	$guests = Guest::all();
 	
 	if (Auth::check()) // if valid user logged in, redirect to database search page
 		return View::make('pages.database.show')
 			->with('guests', $guests);
+	else // if valid user is not logged in, redirect to login page
+		return View::make('pages.login');
+});
+
+/*
+Purpose: Redirect to view admins view all user page
+Uses: app/views/pages/database/admin/show.blade.php
+*/
+Route::get('/database/admin/show-all', function()
+{
+	$users = User::all();
+	
+	if (Auth::check()) // if valid user logged in, redirect to database add page
+		return View::make('pages.database.admin.admin-show')
+			->with('users', $users);
+	else // if valid user is not logged in, redirect to login page
+		return View::make('pages.login');
+});
+
+/*
+Purpose: Redirect to view admins add user page
+Uses: app/views/pages/database/admin/add.blade.php
+*/
+Route::get('/database/admin/add', function()
+{
+	if (Auth::check()) // if valid user logged in, redirect to database add page
+		return View::make('pages.database.admin.admin-add');
+	else // if valid user is not logged in, redirect to login page
+		return View::make('pages.login');
+});
+
+/*
+Purpose: Redirect to view admins view edit user page
+Uses: app/views/pages/database/admin/edit.blade.php
+*/
+Route::get('/database/admin/edit', function()
+{
+	if (Auth::check()) // if valid user logged in, redirect to database add page
+		return View::make('pages.database.admin.admin-edit');
 	else // if valid user is not logged in, redirect to login page
 		return View::make('pages.login');
 });
@@ -133,13 +172,19 @@ Route::post('login', array('uses' => 'VolunteerController@doLogin'));
 Purpose: Process logout
 Uses: app/controllers/VolunteerController.php
 */
-Route::get('logout', array('uses' => 'VolunteerController@doLogout'));
+Route::get('/logout', array('uses' => 'VolunteerController@doLogout'));
 
 /*
 Purpose: Connect GuestController to use function inside of it
 Uses: app/controllers/GuestController.php
 */
 Route::resource('guests', 'GuestController');
+
+/*
+Purpose: Connect VounteerController to use function inside of it
+Uses: app/controllers/VolunteerController.php
+*/
+Route::resource('volunteers', 'VolunteerController');
 
 /*
 Purpose: Process search
