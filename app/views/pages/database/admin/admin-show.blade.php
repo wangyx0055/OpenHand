@@ -1,7 +1,7 @@
 @extends('layouts.database')
 @section('content')
 <div class="row">
-	<table class="table table-striped table-bordered">
+	<table>
 		<thead>
 			<tr>
 				<td>First Name</td>
@@ -19,7 +19,11 @@
 				<td>{{ $value->email }}</td>
 				<td>{{ $value->isAdmin }}</td>
 				<td>
-					<a class="btn btn-small btn-info" href="{{ URL::to('volunteers/' . $value->id . '/edit') }}">Edit</a>
+					<a class="button tiny" href="{{ URL::to('volunteers/' . $value->id . '/edit') }}">Edit</a>
+					{{ Form::open(array('url' => 'volunteers/' . $value->id)) }}
+                    	{{ Form::hidden('_method', 'DELETE') }}
+                    	{{ Form::submit('Delete', array('class' => 'button tiny')) }}
+                	{{ Form::close() }}
 				</td>
 			</tr>
 		@endforeach

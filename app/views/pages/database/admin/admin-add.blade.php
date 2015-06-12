@@ -20,7 +20,7 @@
 			{{ Form::label('last_name', 'Last Name', array('class' => 'oh-label')) }}
 		</div>
 		<div class="large-10 small-12 columns">
-			{{ Form::text('last_name', null, array('placeholder' => 'Bob123')) }}
+			{{ Form::text('last_name', null, array('placeholder' => 'Smith')) }}
 		</div>
 	</div>
 	<div class="row">
@@ -28,7 +28,7 @@
 			{{ Form::label('email', 'Email', array('class' => 'oh-label')) }}
 		</div>
 		<div class="large-10 small-12 columns">
-			{{ Form::text('email', null, array('placeholder' => '123 s 456 w')) }}
+			{{ Form::text('email', null, array('placeholder' => 'bobsmith@example.com')) }}
 		</div>
 	</div>
 	<div class="row">
@@ -45,6 +45,14 @@
 		</div>
 		<div class="large-10 small-12 columns">
 			{{ Form::password('password_confirmation') }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-2 small-12 columns">
+			{{ Form::label('isAdmin', 'Is Admin', array('class' => 'oh-label')) }}
+		</div>
+		<div class="large-10 small-12 columns">
+			{{ Form::select('isAdmin', array('0' => 'No', '1' => 'Yes'), null, array()) }}
 		</div>
 	</div>
 	<div class="row">

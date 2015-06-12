@@ -175,6 +175,12 @@ Uses: app/controllers/VolunteerController.php
 Route::get('/logout', array('uses' => 'VolunteerController@doLogout'));
 
 /*
+Purpose: Process guest check-in
+Uses: app/controllers/GuestController.php
+*/
+Route::post('guest/{id}/check-in', array('as' => 'guests.checkIn', 'uses' => 'GuestController@checkIn'));
+
+/*
 Purpose: Connect GuestController to use function inside of it
 Uses: app/controllers/GuestController.php
 */
@@ -191,3 +197,4 @@ Purpose: Process search
 Uses: app/controllers/VolunteerController.php
 */
 Route::post('search', array('uses' => 'VolunteerController@doSearch'));
+

@@ -36,7 +36,7 @@
 			{{ Form::label('password', 'Password', array('class' => 'oh-label')) }}
 		</div>
 		<div class="large-10 small-12 columns">
-			{{ Form::password('password') }}
+			{{ Form::password('password', array('placeholder' => 'Leave empty if password isn\'t changing')) }}
 		</div>
 	</div>
 	<div class="row">
@@ -44,9 +44,18 @@
 			{{ Form::label('password_confirmation', 'Re-Type Password', array('class' => 'oh-label')) }}
 		</div>
 		<div class="large-10 small-12 columns">
-			{{ Form::password('password_confirmation') }}
+			{{ Form::password('password_confirmation', array('placeholder' => 'Leave empty if password isn\'t changing')) }}
 		</div>
 	</div>
+	<div class="row">
+		<div class="large-2 small-12 columns">
+			{{ Form::label('isAdmin', 'Is Admin', array('class' => 'oh-label')) }}
+		</div>
+		<div class="large-10 small-12 columns">
+			{{ Form::select('isAdmin', array('0' => 'No', '1' => 'Yes'), null, array()) }}
+		</div>
+	</div>
+	<div cla
 	<div class="row">
 		<div class="small-12 columns">
 			{{ Form::submit('Update', array('class' => 'button tiny')) }}

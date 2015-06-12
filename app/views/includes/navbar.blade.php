@@ -28,7 +28,7 @@
 						<li><a href="/database/add">Add Guest</a></li>
 						<li><a href="/database/search">Search Guests</a></li>
 						<li class="divider"></li>
-						<li><a href="/logout">Volunteer Logout</a></li>
+						<li><a href="/logout">Logout</a></li>
 					</ul>
 				</li>
 				@elseif (Auth::check() && Auth::user()->isAdmin == 1)
@@ -41,7 +41,7 @@
 						<li><a href="/database/admin/add">Add Volunteer</a></li>
 						<li><a href="/database/admin/show-all">Show All Volunteers</a></li>
 						<li class="divider"></li>
-						<li><a href="/logout">Admin Logout</a></li>
+						<li><a href="/logout">Logout</a></li>
 					</ul>
 				</li>
 				@else

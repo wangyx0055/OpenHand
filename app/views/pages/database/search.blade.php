@@ -13,7 +13,7 @@
 </div>
 {{ Form::close() }}
 @if ($results != '')
-<table class="table table-striped table-bordered">
+<table>
 	<thead>
 		<tr>
 			<td>First Name</td>
@@ -31,8 +31,14 @@
 			<td>{{ $value->address }}</td>
 			<td>{{ $value->zipcode }}</td>
 			<td>
-				<a class="btn btn-small btn-info" href="{{ URL::to('guests/' . $value->id . '/edit') }}">Edit</a>
-				<a class="btn btn-small btn-info" href="#">Check-in</a>
+				<a class="button tiny" href="{{ URL::to('guests/' . $value->id . '/edit') }}">Edit</a>
+				{{ Form::open(array('action' => array('guests.checkIn', $value->id))) }}
+					@if ($value->last_visit == date('Y-m-d'))
+                   	{{ Form::label('', 'Checked-in', array('class' => 'oh-label')) }}
+					@else
+					{{ Form::submit('Check-in', array('class' => 'button tiny')) }}
+					@endif
+                {{ Form::close() }}
 			</td>
 		</tr>
 	@endforeach

@@ -23,17 +23,17 @@ class GuestController extends BaseController
 	{
 		// validation rules
 		$rules = array(
-			'first_name' => 'required',
-			'last_name' => 'required',
+			'first_name' => 'required|alpha',
+			'last_name' => 'required|alpha',
 			'address' => 'required',
-			'zipcode' => 'required'
+			'zipcode' => 'required|numeric'
 		);
 		
 		// check for valid details
 		$validator = Validator::make(Input::all(), $rules);
 	
 		if ($validator->fails()) { // if validation fails, redirect back to database-add
-			return Redirect::to('guests/' . $value->id . '/edit')
+			return Redirect::to('guests/' . $id . '/edit')
 				->withErrors($validator);
 		} else { // if validation succesful, add new guest
 			$guest = Guest::find($id);
@@ -43,7 +43,6 @@ class GuestController extends BaseController
 			$guest->last_name = Input::get('last_name');
 			$guest->address = Input::get('address');
 			$guest->zipcode = Input::get('zipcode');
-			$guest->last_visit = date('Y-m-d');
 			
 			$guest->save();
 			
@@ -59,10 +58,10 @@ class GuestController extends BaseController
 	{
 		// validation rules
 		$rules = array(
-			'first_name' => 'required',
-			'last_name' => 'required',
+			'first_name' => 'required|alpha',
+			'last_name' => 'required|alpha',
 			'address' => 'required',
-			'zipcode' => 'required'
+			'zipcode' => 'required|numeric'
 		);
 		
 		// check for valid details
@@ -79,11 +78,27 @@ class GuestController extends BaseController
 			$guest->last_name = Input::get('last_name');
 			$guest->address = Input::get('address');
 			$guest->zipcode = Input::get('zipcode');
-			$guest->last_visit = date('Y-m-d');
 			
 			$guest->save();
 			
 			return Redirect::to('/database/add');
 		}
+	}
+	
+	/*
+	Name: checkIn
+	Purpose: Check-in a guest
+	*/
+	public function checkIn($id)
+	{
+		// find guest by id
+		$guest = Guest::find($id);
+		
+		// make guest last visit equal todays date
+		$guest->last_visit = date('Y-m-d');
+			
+		$guest->save();
+		
+		return Redirect::to('/database/search');
 	}
 }

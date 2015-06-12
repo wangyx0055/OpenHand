@@ -73,8 +73,8 @@ class VolunteerController extends BaseController
 	{
 		// validation rules
 		$rules = array(
-			'first_name' => 'required',
-			'last_name' => 'required',
+			'first_name' => 'required|alpha',
+			'last_name' => 'required|alpha',
 			'email' => 'required|email',
 			'password' => 'required|min:3|confirmed',
 			'password_confirmation' => 'required|min:3'
@@ -94,7 +94,7 @@ class VolunteerController extends BaseController
 			$user->last_name = Input::get('last_name');
 			$user->email = Input::get('email');
 			$user->password = Hash::Make(Input::get('password'));
-			$user->isAdmin = 0;
+			$user->isAdmin = Input::get('isAdmin');
 			
 			$user->save();
 			
@@ -111,7 +111,7 @@ class VolunteerController extends BaseController
 		// find guest by id
 		$volunteer = User::find($id);
 		
-		return View::make('pages.database.admin.edit')
+		return View::make('pages.database.admin.admin-edit')
             ->with('volunteer', $volunteer);
 	}
 	
@@ -123,18 +123,18 @@ class VolunteerController extends BaseController
 	{
 		// validation rules
 		$rules = array(
-			'first_name' => 'required',
-			'last_name' => 'required',
+			'first_name' => 'required|alpha',
+			'last_name' => 'required|alpha',
 			'email' => 'required|email',
-			'password' => 'required|min:3|confirmed',
-			'password_confirmation' => 'required|min:3'
+			'password' => 'min:3|confirmed',
+			'password_confirmation' => 'min:3'
 		);
 		
 		// check for valid details
 		$validator = Validator::make(Input::all(), $rules);
 	
 		if ($validator->fails()) { // if validation fails, redirect back to database-add
-			return Redirect::to('volunteers/' . $value->id . '/edit')
+			return Redirect::to('volunteers/' . $id . '/edit')
 				->withErrors($validator);
 		} else { // if validation succesful, add new guest
 			$user = User::find($id);
@@ -143,11 +143,28 @@ class VolunteerController extends BaseController
 			$user->first_name = Input::get('first_name');
 			$user->last_name = Input::get('last_name');
 			$user->email = Input::get('email');
-			$user->password = Hash::make(Input::get('password'));
+			
+			if (!Input::get('password') == "") { // if password field not empty then change password
+				$user->password = Hash::make(Input::get('password'));
+			}
+			
+			$user->isAdmin = Input::get('isAdmin');
 			
 			$user->save();
 			
 			return Redirect::to('/database/admin/show-all');
 		}
 	}
+	
+	/*
+	Name: delete
+	Purpose: Delete volunteer passed into the function
+	*/
+	public function destroy($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+
+        return Redirect::to('/database/admin/show-all');
+    }
 }
