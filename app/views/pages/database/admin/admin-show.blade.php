@@ -1,33 +1,22 @@
 @extends('layouts.database')
 @section('content')
+@foreach($users as $key => $value)
 <div class="row">
-	<table>
-		<thead>
-			<tr>
-				<td>First Name</td>
-				<td>Last Name</td>
-				<td>Email</td>
-				<td>isAdmin</td>
-				<td>Actions</td>
-			</tr>
-		</thead>
-		<tbody>
-		@foreach($users as $key => $value)
-			<tr>
-				<td>{{ $value->first_name }}</td>
-				<td>{{ $value->last_name }}</td>
-				<td>{{ $value->email }}</td>
-				<td>{{ $value->isAdmin }}</td>
-				<td>
-					<a class="button tiny" href="{{ URL::to('volunteers/' . $value->id . '/edit') }}">Edit</a>
-					{{ Form::open(array('url' => 'volunteers/' . $value->id)) }}
-                    	{{ Form::hidden('_method', 'DELETE') }}
-                    	{{ Form::submit('Delete', array('class' => 'button tiny')) }}
-                	{{ Form::close() }}
-				</td>
-			</tr>
-		@endforeach
-		</tbody>
-	</table>
+	<div class="medium-4 small-12 columns">
+		{{ $value->name }}
+	</div>
+	<div class="medium-4 small-12 columns">
+		{{ $value->email }}
+	</div>
+	<div class="medium-2 small-6 columns">
+		<a class="button tiny" href="{{ URL::to('volunteers/' . $value->id . '/edit') }}">Edit</a>
+	</div>
+	<div class="medium-2 small-6 columns">
+		{{ Form::open(array('url' => 'volunteers/' . $value->id)) }}
+        	{{ Form::hidden('_method', 'DELETE') }}
+            {{ Form::submit('Delete', array('class' => 'button tiny')) }}
+        {{ Form::close() }}
+	</div>
 </div>
+@endforeach
 @stop

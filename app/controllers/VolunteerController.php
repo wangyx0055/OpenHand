@@ -58,8 +58,13 @@ class VolunteerController extends BaseController
 		// get search data
 		$search = Input::get('search');
 		
-		// search database for id with corresponding last_name value
-		$results = Guest::where('last_name', 'LIKE', $search)->get();
+		if (Input::get('searchBy') == 0) { // search database for id with corresponding last_name value
+			$results = Guest::where('last_name', 'LIKE', '%' . $search . '%')->get();
+		} else if (Input::get('searchBy') == 1) { // search database for id with corresponding first_name value
+			$results = Guest::where('first_name', 'LIKE', '%' . $search . '%')->get();
+		} else { // search database for id with corresponding zipcode value
+			$results = Guest::where('zipcode', 'LIKE', '%' . $search . '%')->get();
+		}
 		
 		return View::make('pages.database.search')
 			->with('results', $results);
@@ -73,8 +78,7 @@ class VolunteerController extends BaseController
 	{
 		// validation rules
 		$rules = array(
-			'first_name' => 'required|alpha',
-			'last_name' => 'required|alpha',
+			'name' => 'required',
 			'email' => 'required|email',
 			'password' => 'required|min:3|confirmed',
 			'password_confirmation' => 'required|min:3'
@@ -90,8 +94,7 @@ class VolunteerController extends BaseController
 			$user = new User;
 			
 			// get guest data from form
-			$user->first_name = Input::get('first_name');
-			$user->last_name = Input::get('last_name');
+			$user->name = Input::get('name');
 			$user->email = Input::get('email');
 			$user->password = Hash::Make(Input::get('password'));
 			$user->isAdmin = Input::get('isAdmin');
@@ -123,8 +126,7 @@ class VolunteerController extends BaseController
 	{
 		// validation rules
 		$rules = array(
-			'first_name' => 'required|alpha',
-			'last_name' => 'required|alpha',
+			'name' => 'required',
 			'email' => 'required|email',
 			'password' => 'min:3|confirmed',
 			'password_confirmation' => 'min:3'
@@ -140,8 +142,7 @@ class VolunteerController extends BaseController
 			$user = User::find($id);
 			
 			// get guest data from form
-			$user->first_name = Input::get('first_name');
-			$user->last_name = Input::get('last_name');
+			$user->name = Input::get('name');
 			$user->email = Input::get('email');
 			
 			if (!Input::get('password') == "") { // if password field not empty then change password

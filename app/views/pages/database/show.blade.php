@@ -1,36 +1,25 @@
 @extends('layouts.database')
 @section('content')
+@foreach($guests as $key => $value)
 <div class="row">
-	<table>
-		<thead>
-			<tr>
-				<td>First Name</td>
-				<td>Last Name</td>
-				<td>Address</td>
-				<td>Zipcode</td>
-				<td>Actions</td>
-			</tr>
-		</thead>
-		<tbody>
-		@foreach($guests as $key => $value)
-			<tr>
-				<td>{{ $value->first_name }}</td>
-				<td>{{ $value->last_name }}</td>
-				<td>{{ $value->address }}</td>
-				<td>{{ $value->zipcode }}</td>
-				<td>
-					<a class="button tiny" href="{{ URL::to('guests/' . $value->id . '/edit') }}">Edit</a>
-					{{ Form::open(array('action' => array('guests.checkIn', $value->id))) }}
-                   		@if ($value->last_visit == date('Y-m-d'))
-						{{ Form::label('', 'Checked-in', array('class' => 'oh-label')) }}
-						@else
-						{{ Form::submit('Check-in', array('class' => 'button tiny')) }}
-						@endif
-                	{{ Form::close() }}
-				</td>
-			</tr>
-		@endforeach
-		</tbody>
-	</table>
+	<div class="medium-3 small-12 columns">
+		{{ $value->last_name }}, {{ $value->first_name }}
+	</div>
+	<div class="medium-5 small-12 columns">
+		{{ $value->address }}, {{ $value->zipcode }}
+	</div>
+	<div class="medium-2 small-6 columns">
+		<a class="button tiny" href="{{ URL::to('guests/' . $value->id . '/edit') }}">Edit</a>
+	</div>
+	<div class="medium-2 small-6 columns">
+		{{ Form::open(array('action' => array('guests.checkIn', $value->id))) }}
+            @if ($value->last_visit == date('Y-m-d'))
+			{{ Form::label('', 'Checked-in', array('class' => 'oh-label-small')) }}
+			@else
+			{{ Form::submit('Check-in', array('class' => 'button tiny')) }}
+			@endif
+        {{ Form::close() }}
+	</div>
 </div>
+@endforeach
 @stop

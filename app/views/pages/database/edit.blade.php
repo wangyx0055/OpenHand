@@ -40,6 +40,14 @@
 		</div>
 	</div>
 	<div class="row">
+		<div class="large-2 small-12 columns">
+			{{ Form::label('checkIn', 'Check-in', array('class' => 'oh-label')) }}
+		</div>
+		<div class="large-10 small-12 columns">
+			{{ Form::select('checkIn', array('0' => 'No', '1' => 'Yes'), null, array()) }}
+		</div>
+	</div>
+	<div class="row">
 		<div class="small-12 columns">
 			{{ Form::submit('Update', array('class' => 'button tiny')) }}
 		</div>
