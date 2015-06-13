@@ -13,6 +13,7 @@
 		<div class="panel">
 			Directors, Ken and/or Lorena Whitaker</br>
 			801-564-5964</br>
+			openhandministry@msn.com
 		</div>
 	</div>
 </div>
@@ -20,7 +21,8 @@
 	<div class="small-12 columns">
 		<div class="panel">
 			Webmaster, Austin Wheeler</br>
-			801-389-5642
+			801-389-5642</br>
+			austin.g.wheeler@gmail.com
 		</div>
 	</div>
 </div>
