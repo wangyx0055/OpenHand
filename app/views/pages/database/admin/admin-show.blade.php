@@ -2,10 +2,10 @@
 @section('content')
 @foreach($users as $key => $value)
 <div class="row">
-	<div class="medium-4 small-12 columns">
-		{{ $value->name }}
+	<div class="medium-3 small-12 columns">
+		{{ $value->last_name }}, {{ $value->first_name }}
 	</div>
-	<div class="medium-4 small-12 columns">
+	<div class="medium-5 small-12 columns">
 		{{ $value->email }}
 	</div>
 	<div class="medium-2 small-6 columns">

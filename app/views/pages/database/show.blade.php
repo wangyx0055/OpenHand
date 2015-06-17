@@ -13,7 +13,7 @@
 	</div>
 	<div class="medium-2 small-6 columns">
 		{{ Form::open(array('action' => array('guests.checkIn', $value->id))) }}
-            @if ($value->last_visit == date('Y-m-d'))
+            @if (date('Y-m-d', strtotime($value->last_visit)) == date('Y-m-d'))
 			{{ Form::label('', 'Checked-in', array('class' => 'oh-label-small')) }}
 			@else
 			{{ Form::submit('Check-in', array('class' => 'button tiny')) }}

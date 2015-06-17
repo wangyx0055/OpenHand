@@ -78,7 +78,8 @@ class VolunteerController extends BaseController
 	{
 		// validation rules
 		$rules = array(
-			'name' => 'required',
+			'first_name' => 'required',
+			'last_name' => 'required',
 			'email' => 'required|email',
 			'password' => 'required|min:3|confirmed',
 			'password_confirmation' => 'required|min:3'
@@ -94,7 +95,8 @@ class VolunteerController extends BaseController
 			$user = new User;
 			
 			// get guest data from form
-			$user->name = Input::get('name');
+			$user->first_name = Input::get('first_name');
+			$user->last_name = Input::get('last_name');
 			$user->email = Input::get('email');
 			$user->password = Hash::Make(Input::get('password'));
 			$user->isAdmin = Input::get('isAdmin');
@@ -126,7 +128,8 @@ class VolunteerController extends BaseController
 	{
 		// validation rules
 		$rules = array(
-			'name' => 'required',
+			'first_name' => 'required',
+			'last_name' => 'required',
 			'email' => 'required|email',
 			'password' => 'min:3|confirmed',
 			'password_confirmation' => 'min:3'
@@ -142,7 +145,8 @@ class VolunteerController extends BaseController
 			$user = User::find($id);
 			
 			// get guest data from form
-			$user->name = Input::get('name');
+			$user->first_name = Input::get('first_name');
+			$user->last_name = Input::get('last_name');
 			$user->email = Input::get('email');
 			
 			if (!Input::get('password') == "") { // if password field not empty then change password

@@ -19,7 +19,7 @@ class CreateGuestsTable extends Migration {
 			$table->string('last_name', 32);
 			$table->string('address', 128);
 			$table->string('zipcode', 5);
-			$table->date('last_visit');
+			$table->dateTime('last_visit');
 			
 			$table->timestamps();
 		});

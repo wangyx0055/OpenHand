@@ -12,7 +12,7 @@
 			{{ Form::label('first_name', 'First Name', array('class' => 'oh-label')) }}
 		</div>
 		<div class="large-10 small-12 columns">
-			{{ Form::text('first_name', null, array('placeholder' => 'Bob')) }}
+			{{ Form::text('first_name', null, array()) }}
 		</div>
 	</div>
 	<div class="row">
@@ -20,7 +20,7 @@
 			{{ Form::label('last_name', 'Last Name', array('class' => 'oh-label')) }}
 		</div>
 		<div class="large-10 small-12 columns">
-			{{ Form::text('last_name', null, array('placeholder' => 'Smith')) }}
+			{{ Form::text('last_name', null, array()) }}
 		</div>
 	</div>
 	<div class="row">
@@ -28,7 +28,7 @@
 			{{ Form::label('address', 'Address', array('class' => 'oh-label')) }}
 		</div>
 		<div class="large-10 small-12 columns">
-			{{ Form::text('address', null, array('placeholder' => '123 s 456 w')) }}
+			{{ Form::text('address', null, array()) }}
 		</div>
 	</div>
 	<div class="row">
@@ -36,7 +36,7 @@
 			{{ Form::label('zipcode', 'Zipcode', array('class' => 'oh-label')) }}
 		</div>
 		<div class="large-10 small-12 columns">
-			{{ Form::text('zipcode', null, array('placeholder' => '84440')) }}
+			{{ Form::text('zipcode', null, array()) }}
 		</div>
 	</div>
 	<div class="row">

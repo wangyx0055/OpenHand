@@ -9,10 +9,18 @@
 	</div>
 	<div class="row">
 		<div class="large-2 small-12 columns">
-			{{ Form::label('name', 'Name', array('class' => 'oh-label')) }}
+			{{ Form::label('first_name', 'First Name', array('class' => 'oh-label')) }}
 		</div>
 		<div class="large-10 small-12 columns">
-			{{ Form::text('name', null, array('placeholder' => 'Bob')) }}
+			{{ Form::text('first_name', null, array()) }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-2 small-12 columns">
+			{{ Form::label('last_name', 'Last Name', array('class' => 'oh-label')) }}
+		</div>
+		<div class="large-10 small-12 columns">
+			{{ Form::text('last_name', null, array()) }}
 		</div>
 	</div>
 	<div class="row">
@@ -20,7 +28,7 @@
 			{{ Form::label('email', 'Email', array('class' => 'oh-label')) }}
 		</div>
 		<div class="large-10 small-12 columns">
-			{{ Form::text('email', null, array('placeholder' => 'bobsmith@example.com')) }}
+			{{ Form::text('email', null, array()) }}
 		</div>
 	</div>
 	<div class="row">

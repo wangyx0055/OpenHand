@@ -45,7 +45,7 @@ class GuestController extends BaseController
 			$guest->zipcode = Input::get('zipcode');
 			
 			if (!Input::get('checkIn') == 0) { // check-in if option is selected
-				$guest->last_vist = Date('Y-m-d');
+				$guest->last_visit = date("Y-m-d H:i:s");
 			}
 			
 			$guest->save();
@@ -82,7 +82,7 @@ class GuestController extends BaseController
 			$guest->last_name = Input::get('last_name');
 			$guest->address = Input::get('address');
 			$guest->zipcode = Input::get('zipcode');
-			$guest->last_visist = Date('Y-m-d');
+			$guest->last_visit = date("Y-m-d H:i:s");
 			
 			$guest->save();
 			
@@ -100,7 +100,7 @@ class GuestController extends BaseController
 		$guest = Guest::find($id);
 		
 		// make guest last visit equal todays date
-		$guest->last_visit = date('Y-m-d');
+		$guest->last_visit = date("Y-m-d H:i:s");
 			
 		$guest->save();
 		
