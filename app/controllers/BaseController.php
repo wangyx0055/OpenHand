@@ -1,6 +1,4 @@
 <?php
-// set timezone for date functions
-date_default_timezone_set('America/Denver');
 
 class BaseController extends Controller {
 	

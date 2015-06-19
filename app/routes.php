@@ -163,6 +163,35 @@ Route::get('/database/admin/edit', function()
 });
 
 /*
+Purpose: Redirect to history database page
+Uses: app/views/pages/database/admin/history.blade.php
+*/
+Route::get('/database/admin/history', function()
+{
+	$startYear = idate('Y', strtotime('2015'));
+	$currentYear = idate('Y', time());
+	$stringOfYears = '';
+	
+	while ($currentYear >= $startYear)
+	{
+		$stringOfYears .= $startYear;
+		
+		if ($startYear != $currentYear)
+			$stringOfYears .= ',';
+			
+		$startYear++;
+	}
+	
+	$stringOfYears = explode(',', $stringOfYears);
+	
+	if (Auth::check()) // if valid user logged in, redirect to database search page
+		return View::make('pages.database.admin.history')
+			->with('years', $stringOfYears);
+	else // if valid user is not logged in, redirect to login page
+		return View::make('pages.login');
+});
+
+/*
 Purpose: Process login
 Uses: app/controllers/VolunteerController.php
 */
@@ -197,4 +226,10 @@ Purpose: Process search
 Uses: app/controllers/VolunteerController.php
 */
 Route::post('search', array('uses' => 'VolunteerController@doSearch'));
+
+/*
+Purpose: Process history search
+Uses: app/controllers/VolunteerController.php
+*/
+Route::post('history_search', array('uses' => 'VolunteerController@doHistorySearch'));
 

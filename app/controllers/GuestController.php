@@ -104,6 +104,16 @@ class GuestController extends BaseController
 			
 		$guest->save();
 		
+		// create a new row in history table
+		$history = new History;
+		
+		// add history date
+		$history->first_name = $guest->first_name;
+		$history->last_name = $guest->last_name;
+		$history->date_of_visit = date("Y-m-d H:i:s");
+		
+		$history->save();
+		
 		return Redirect::to('/database/search');
 	}
 }

@@ -26,6 +26,7 @@
 				<li><a href="/database/search">Search Guests</a></li>
 				<li><a href="/database/admin/add">Add User</a></li>
 				<li><a href="/database/admin/show-all">Show All Users</a></li>
+				<li><a href="/database/admin/history">Guest History</a></li>
 				<li><a href="/logout">Logout</a></li>
 				@else
 				<li><a href="/login">User Sign-in</a></li>

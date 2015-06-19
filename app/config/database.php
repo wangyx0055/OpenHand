@@ -1,5 +1,7 @@
 <?php
 
+date_default_timezone_set('America/Denver');
+
 $url = gethostname();
 
 if (strpos($url, 'codeanywhere') !== false) {

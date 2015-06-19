@@ -71,6 +71,32 @@ class VolunteerController extends BaseController
 	}
 	
 	/*
+	Name: doHistorySearch
+	Purpose: Process history search
+	*/
+	public function doHistorySearch()
+	{
+		$startYear = idate('Y', strtotime('2015'));
+		$currentYear = idate('Y', time());
+		$stringOfYears = '';
+
+		while ($currentYear >= $startYear)
+		{
+			$stringOfYears .= $startYear;
+
+			if ($startYear != $currentYear)
+				$stringOfYears .= ',';
+
+			$startYear++;
+		}
+	
+		$stringOfYears = explode(',', $stringOfYears);
+		
+		return View::make('pages.database.history')
+			->with('years', $stringOfYears);
+	}
+	
+	/*
 	Name: store
 	Purpose: Store a new volunteer
 	*/
