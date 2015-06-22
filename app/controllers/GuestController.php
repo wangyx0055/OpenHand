@@ -38,19 +38,25 @@ class GuestController extends BaseController
 		} else { // if validation succesful, add new guest
 			$guest = Guest::find($id);
 			
-			// get guest data from form
-			$guest->first_name = Input::get('first_name');
-			$guest->last_name = Input::get('last_name');
+			// get data from form
 			$guest->address = Input::get('address');
 			$guest->zipcode = Input::get('zipcode');
 			
-			if (!Input::get('checkIn') == 0) { // check-in if option is selected
-				$guest->last_visit = date("Y-m-d H:i:s");
-			}
-			
 			$guest->save();
 			
-			return Redirect::to('/database/search');
+			$person = Person::find($guest->person_id);
+			
+			// get data from form
+			$person->first_name = Input::get('first_name');
+			$person->last_name = Input::get('last_name');
+			
+			$person->save();
+			
+			if (Input::get('checkIn') == 2) { // check-in if option is selected
+				return $this->checkIn($guest->id);
+			} else {
+				return Redirect::to('/database/search');
+			}
 		}
 	}
 	
@@ -75,11 +81,18 @@ class GuestController extends BaseController
 			return Redirect::to('/database/add')
 				->withErrors($validator);
 		} else { // if validation succesful, add new guest
+			$person = new Person;
+			
+			// get data from form
+			$person->first_name = Input::get('first_name');
+			$person->last_name = Input::get('last_name');
+			$person->person_type = 2;
+			
+			$person->save();
+			
 			$guest = new Guest;
 			
-			// get guest data from form
-			$guest->first_name = Input::get('first_name');
-			$guest->last_name = Input::get('last_name');
+			$guest->person_id = $person->id;
 			$guest->address = Input::get('address');
 			$guest->zipcode = Input::get('zipcode');
 			$guest->last_visit = date("Y-m-d H:i:s");
@@ -105,12 +118,11 @@ class GuestController extends BaseController
 		$guest->save();
 		
 		// create a new row in history table
-		$history = new History;
+		$history = new GuestHistory;
 		
 		// add history date
-		$history->first_name = $guest->first_name;
-		$history->last_name = $guest->last_name;
-		$history->date_of_visit = date("Y-m-d H:i:s");
+		$history->guest_id = $guest->id;
+		$history->date_of_visit = date("Y-m-d");
 		
 		$history->save();
 		

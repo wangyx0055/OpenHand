@@ -1,6 +1,6 @@
 @extends('layouts.database')
 @section('content')
-{{ Form::model($volunteer, array('route' => array('volunteers.update', $volunteer->id), 'method' => 'PUT')) }}
+{{ Form::model($user, array('route' => array('users.update', $user->id), 'method' => 'PUT')) }}
 <div class="oh-form-group">
 	<div class="row">
 		<div class="small-12 columns">
@@ -12,7 +12,7 @@
 			{{ Form::label('first_name', 'First Name', array('class' => 'oh-label')) }}
 		</div>
 		<div class="large-10 small-12 columns">
-			{{ Form::text('first_name', null, array()) }}
+			{{ Form::text('first_name', DB::table('people')->where('id', '=', $user->person_id)->pluck('first_name'), array()) }}
 		</div>
 	</div>
 	<div class="row">
@@ -20,7 +20,7 @@
 			{{ Form::label('last_name', 'Last Name', array('class' => 'oh-label')) }}
 		</div>
 		<div class="large-10 small-12 columns">
-			{{ Form::text('last_name', null, array()) }}
+			{{ Form::text('last_name', DB::table('people')->where('id', '=', $user->person_id)->pluck('last_name'), array()) }}
 		</div>
 	</div>
 	<div class="row">
@@ -52,7 +52,11 @@
 			{{ Form::label('isAdmin', 'Is Admin', array('class' => 'oh-label')) }}
 		</div>
 		<div class="large-10 small-12 columns">
-			{{ Form::select('isAdmin', array('0' => 'No', '1' => 'Yes'), null, array()) }}
+			@if ($user->user_type == 1)
+			{{ Form::select('isAdmin', array('1' => 'No', '2' => 'Yes'), null, array()) }}
+			@else
+			{{ Form::select('isAdmin', array('2' => 'Yes', '1' => 'No'), null, array()) }}
+			@endif
 		</div>
 	</div>
 	<div cla

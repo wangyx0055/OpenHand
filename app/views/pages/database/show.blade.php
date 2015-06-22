@@ -3,7 +3,7 @@
 @foreach($guests as $key => $value)
 <div class="row">
 	<div class="medium-3 small-12 columns">
-		{{ $value->last_name }}, {{ $value->first_name }}
+		{{ Person::find($value->person_id)->last_name }}, {{ Person::find($value->person_id)->first_name }}
 	</div>
 	<div class="medium-5 small-12 columns">
 		{{ $value->address }}, {{ $value->zipcode }}

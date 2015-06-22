@@ -17,11 +17,11 @@
 		</div>
 		<div class="medium-4 small-12 columns">
 			<ul class="no-bullet">
-				@if (Auth::check() && Auth::user()->isAdmin == 0)
+				@if (Auth::check() && Auth::user()->user_type == 1)
 				<li><a href="/database/add">Add Guest</a></li>
 				<li><a href="/database/search">Search Guests</a></li>
 				<li><a href="/logout">Logout</a></li>
-				@elseif (Auth::check() && Auth::user()->isAdmin == 1)
+				@elseif (Auth::check() && Auth::user()->user_type == 2)
 				<li><a href="/database/add">Add Guest</a></li>
 				<li><a href="/database/search">Search Guests</a></li>
 				<li><a href="/database/admin/add">Add User</a></li>

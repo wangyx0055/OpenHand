@@ -1,6 +1,6 @@
 <?php
 
-class VolunteerController extends BaseController 
+class UserController extends BaseController 
 {
 	/*
 	Name: doLogin
@@ -59,12 +59,14 @@ class VolunteerController extends BaseController
 		$search = Input::get('search');
 		
 		if (Input::get('searchBy') == 0) { // search database for id with corresponding last_name value
-			$results = Guest::where('last_name', 'LIKE', '%' . $search . '%')->get();
+			$results = Person::where(function ($query) use ($search) {
+				$query->where('last_name', 'LIKE', '%' . $search . '%');
+			})->where('person_type', '=', 2)->get();
 		} else if (Input::get('searchBy') == 1) { // search database for id with corresponding first_name value
-			$results = Guest::where('first_name', 'LIKE', '%' . $search . '%')->get();
-		} else { // search database for id with corresponding zipcode value
-			$results = Guest::where('zipcode', 'LIKE', '%' . $search . '%')->get();
-		}
+			$results = Person::where(function ($query) use ($search) {
+				$query->where('first_name', 'LIKE', '%' . $search . '%');
+			})->where('person_type', '=', 2)->get();
+		} 
 		
 		return View::make('pages.database.search')
 			->with('results', $results);
@@ -76,10 +78,13 @@ class VolunteerController extends BaseController
 	*/
 	public function doHistorySearch()
 	{
+		// make starting point
 		$startYear = idate('Y', strtotime('2015'));
+		// get current year
 		$currentYear = idate('Y', time());
 		$stringOfYears = '';
-
+		
+		// generate all the years between the start and end
 		while ($currentYear >= $startYear)
 		{
 			$stringOfYears .= $startYear;
@@ -90,10 +95,24 @@ class VolunteerController extends BaseController
 			$startYear++;
 		}
 	
+		// split string into array
 		$stringOfYears = explode(',', $stringOfYears);
 		
-		return View::make('pages.database.history')
-			->with('years', $stringOfYears);
+		// get input from form
+		$beginTime = Input::get('from_year') . '-' . Input::get('from_month');
+		$endTime = Input::get('to_year') . '-' . Input::get('to_month');
+		
+		// search database for all records between the two dates and count them
+		$results = DB::table('guest_histories')
+			->where('date_of_visit', '>=', date('Y-m', strtotime($beginTime . " +1 days")))
+			->where('date_of_visit', '<=', date('Y-m', strtotime($endTime . " +31 days")))
+			->count();
+	
+		return View::make('pages.database.admin.history')
+			->with('years', $stringOfYears)
+			->with('results', $results)
+			->with('beginTime', $beginTime)
+			->with('endTime', $endTime);
 	}
 	
 	/*
@@ -118,14 +137,24 @@ class VolunteerController extends BaseController
 			return Redirect::to('/database/admin/add')
 				->withErrors($validator);
 		} else { // if validation succesful, add new guest
+			// declare new person
+			$person = new Person;
+			
+			// get data from form
+			$person->first_name = Input::get('first_name');
+			$person->last_name = Input::get('last_name');
+			$person->person_type = 1;
+			
+			$person->save();
+			
+			// declare new user
 			$user = new User;
 			
-			// get guest data from form
-			$user->first_name = Input::get('first_name');
-			$user->last_name = Input::get('last_name');
+			// get data from form
+			$user->person_id = $person->id;
 			$user->email = Input::get('email');
 			$user->password = Hash::Make(Input::get('password'));
-			$user->isAdmin = Input::get('isAdmin');
+			$user->user_type = Input::get('isAdmin');
 			
 			$user->save();
 			
@@ -135,15 +164,15 @@ class VolunteerController extends BaseController
 	
 	/*
 	Name: edit
-	Purpose: Return volunteer id to the webpage
+	Purpose: Return user id to the webpage
 	*/
 	public function edit($id)
 	{
 		// find guest by id
-		$volunteer = User::find($id);
+		$user = User::find($id);
 		
 		return View::make('pages.database.admin.admin-edit')
-            ->with('volunteer', $volunteer);
+            ->with('user', $user);
 	}
 	
 	/*
@@ -170,18 +199,23 @@ class VolunteerController extends BaseController
 		} else { // if validation succesful, add new guest
 			$user = User::find($id);
 			
-			// get guest data from form
-			$user->first_name = Input::get('first_name');
-			$user->last_name = Input::get('last_name');
 			$user->email = Input::get('email');
 			
 			if (!Input::get('password') == "") { // if password field not empty then change password
 				$user->password = Hash::make(Input::get('password'));
 			}
 			
-			$user->isAdmin = Input::get('isAdmin');
+			$user->user_type = Input::get('isAdmin');
 			
 			$user->save();
+			
+			$person = Person::find($user->person_id);
+			
+			// get guest data from form
+			$person->first_name = Input::get('first_name');
+			$person->last_name = Input::get('last_name');
+			
+			$person->save();
 			
 			return Redirect::to('/database/admin/show-all');
 		}
@@ -193,8 +227,10 @@ class VolunteerController extends BaseController
 	*/
 	public function destroy($id)
     {
+		$person = Person::find($user->person_id);
         $user = User::find($id);
         $user->delete();
+		$person->delete();
 
         return Redirect::to('/database/admin/show-all');
     }

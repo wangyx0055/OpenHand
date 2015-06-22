@@ -1,6 +1,6 @@
 @extends('layouts.database')
 @section('content')
-{{ Form::open(array('url' => 'volunteers')) }}
+{{ Form::open(array('url' => 'users')) }}
 <div class="oh-form-group">
 	<div class="row">
 		<div class="small-12 columns">
@@ -52,7 +52,7 @@
 			{{ Form::label('isAdmin', 'Is Admin', array('class' => 'oh-label')) }}
 		</div>
 		<div class="large-10 small-12 columns">
-			{{ Form::select('isAdmin', array('0' => 'No', '1' => 'Yes'), null, array()) }}
+			{{ Form::select('isAdmin', array('1' => 'No', '2' => 'Yes'), null, array()) }}
 		</div>
 	</div>
 	<div class="row">

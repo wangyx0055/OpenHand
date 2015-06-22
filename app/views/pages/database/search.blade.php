@@ -4,7 +4,7 @@
 <div class="oh-form-group">
 	<div class="row">
 		<div class="small-12 columns">
-			{{ Form::select('searchBy', array('0' => 'Search by Last Name', '1' => 'Search by First Name', '2' => 'Search by Zipcode'), null, array()) }}
+			{{ Form::select('searchBy', array('0' => 'Search by Last Name', '1' => 'Search by First Name'), null, array()) }}
 		</div>
 		<div class="small-8 columns">
 			{{ Form::text('search', Input::old('search')) }}
@@ -22,12 +22,12 @@
 		{{ $value->last_name }}, {{ $value->first_name }}
 	</div>
 	<div class="medium-5 small-12 columns">
-		{{ $value->address }}, {{ $value->zipcode }}
+		{{ DB::table('guests')->where('person_id', '=', $value->id)->pluck('address') }}, {{ DB::table('guests')->where('person_id', '=', $value->id)->pluck('zipcode') }}
 	</div>
 	<div class="medium-2 small-12 columns">
 		{{ Form::open(array('action' => array('guests.checkIn', $value->id))) }}
-            @if (date('Y-m-d', strtotime($value->last_visit)) == date('Y-m-d', time()))
-			{{ Form::label('', 'Checked-in at ' . date('H:i:s', strtotime($value->last_visit)), array('class' => 'oh-label-small')) }}
+            @if (date('Y-m-d', strtotime(DB::table('guests')->where('person_id', '=', $value->id)->pluck('last_visit'))) == date('Y-m-d', time()))
+			{{ Form::label('', 'Checked-in at ' . date('H:i:s', strtotime(DB::table('guests')->where('person_id', '=', $value->id)->pluck('last_visit'))), array('class' => 'oh-label-small')) }}
 			@else
 			{{ Form::submit('Check-in', array('class' => 'button tiny')) }}
 			@endif

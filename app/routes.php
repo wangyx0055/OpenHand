@@ -184,24 +184,27 @@ Route::get('/database/admin/history', function()
 	
 	$stringOfYears = explode(',', $stringOfYears);
 	
+	$results = '';
+	
 	if (Auth::check()) // if valid user logged in, redirect to database search page
 		return View::make('pages.database.admin.history')
-			->with('years', $stringOfYears);
+			->with('years', $stringOfYears)
+			->with('results', $results);
 	else // if valid user is not logged in, redirect to login page
 		return View::make('pages.login');
 });
 
 /*
 Purpose: Process login
-Uses: app/controllers/VolunteerController.php
+Uses: app/controllers/UserController.php
 */
-Route::post('login', array('uses' => 'VolunteerController@doLogin'));
+Route::post('login', array('uses' => 'UserController@doLogin'));
 
 /*
 Purpose: Process logout
-Uses: app/controllers/VolunteerController.php
+Uses: app/controllers/UserController.php
 */
-Route::get('/logout', array('uses' => 'VolunteerController@doLogout'));
+Route::get('/logout', array('uses' => 'UserController@doLogout'));
 
 /*
 Purpose: Process guest check-in
@@ -216,20 +219,20 @@ Uses: app/controllers/GuestController.php
 Route::resource('guests', 'GuestController');
 
 /*
-Purpose: Connect VounteerController to use function inside of it
-Uses: app/controllers/VolunteerController.php
+Purpose: Connect UserController to use function inside of it
+Uses: app/controllers/UserController.php
 */
-Route::resource('volunteers', 'VolunteerController');
+Route::resource('users', 'UserController');
 
 /*
 Purpose: Process search
-Uses: app/controllers/VolunteerController.php
+Uses: app/controllers/UserController.php
 */
-Route::post('search', array('uses' => 'VolunteerController@doSearch'));
+Route::post('search', array('uses' => 'UserController@doSearch'));
 
 /*
 Purpose: Process history search
-Uses: app/controllers/VolunteerController.php
+Uses: app/controllers/UserController.php
 */
-Route::post('history_search', array('uses' => 'VolunteerController@doHistorySearch'));
+Route::post('history_search', array('uses' => 'UserController@doHistorySearch'));
 

@@ -22,7 +22,7 @@
 			</ul>
 			
 			<ul class="right">
-				@if (Auth::check() && Auth::user()->isAdmin == 0)
+				@if (Auth::check() && Auth::user()->user_type == 1)
 				<li class="has-dropdown">
 					<a href="#">Action</a>
 					<ul class="dropdown">
@@ -32,7 +32,7 @@
 						<li><a href="/logout">Logout</a></li>
 					</ul>
 				</li>
-				@elseif (Auth::check() && Auth::user()->isAdmin == 1)
+				@elseif (Auth::check() && Auth::user()->user_type == 2)
 				<li class="has-dropdown">
 					<a href="#">Action</a>
 					<ul class="dropdown">

@@ -12,7 +12,7 @@
 			{{ Form::label('first_name', 'First Name', array('class' => 'oh-label')) }}
 		</div>
 		<div class="large-10 small-12 columns">
-			{{ Form::text('first_name', null, array()) }}
+			{{ Form::text('first_name', DB::table('people')->where('id', '=', $guest->person_id)->pluck('first_name'), array()) }}
 		</div>
 	</div>
 	<div class="row">
@@ -20,7 +20,7 @@
 			{{ Form::label('last_name', 'Last Name', array('class' => 'oh-label')) }}
 		</div>
 		<div class="large-10 small-12 columns">
-			{{ Form::text('last_name', null, array()) }}
+			{{ Form::text('last_name', DB::table('people')->where('id', '=', $guest->person_id)->pluck('last_name'), array()) }}
 		</div>
 	</div>
 	<div class="row">
@@ -45,7 +45,7 @@
 			{{ Form::label('checkIn', 'Check-in', array('class' => 'oh-label')) }}
 		</div>
 		<div class="large-10 small-12 columns">
-			{{ Form::select('checkIn', array('0' => 'No', '1' => 'Yes'), null, array()) }}
+			{{ Form::select('checkIn', array('1' => 'No', '2' => 'Yes'), null, array()) }}
 		</div>
 	</div>
 	@endif
