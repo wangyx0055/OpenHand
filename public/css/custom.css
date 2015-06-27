@@ -22,9 +22,15 @@
 .oh-footer
 {
 	background-color: #333333;
+	color: white;
 }
 
 .oh-footer a
+{
+	color: white;
+}
+
+.oh-footer h2
 {
 	color: white;
 }
@@ -38,4 +44,10 @@
 {
 	color: black;
 	text-decoration: none;
+}
+
+.oh-button
+{
+	height: 100%;
+	width: 95%;
 }

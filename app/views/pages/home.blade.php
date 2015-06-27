@@ -17,7 +17,7 @@
 </div>
 <div class="row">
 	<div class="large-4 small-12 columns">
-		<a href="#" data-reveal-id="modal1" class="button">Where and when do we distribute?</a>
+		<a href="#" data-reveal-id="modal1" class="button oh-button">Where and when do we distribute?</a>
 		
 		<div id="modal1" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 			<h2 id="modalTitle">Where and when do we distribute?</h2>
@@ -34,7 +34,7 @@
 		</div>
 	</div>
 	<div class="large-4 small-12 columns">
-		<a href="#" data-reveal-id="modal2" class="button">What we require from those seeking help</a>
+		<a href="#" data-reveal-id="modal2" class="button oh-button">What we require from those seeking help</a>
 		
 		<div id="modal2" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 			<h2 id="modalTitle">What we require from those seeking help</h2>
@@ -51,7 +51,7 @@
 		</div>
 	</div>
 	<div class="large-4 small-12 columns">
-		<a href="#" data-reveal-id="modal3" class="button">How can I help Open Hand? Donate? Volunteer?</a>
+		<a href="#" data-reveal-id="modal3" class="button oh-button">What can I do to help Open Hand?</a>
 		
 		<div id="modal3" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 			<h2 id="modalTitle">How can I help Open Hand? Donate? Volunteer?</h2>

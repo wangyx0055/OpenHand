@@ -4,14 +4,13 @@
 			<li class="name"></li>
 			<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
 		</ul>
-
 		<section class="top-bar-section">
 			<ul class="left">
 				<li class="has-dropdown">
 					<a href="#">About Us</a>
 					<ul class="dropdown">
 						<li><a href="/ministry-guidelines">Ministry Guidelines</a></li>
-						<li><a href="/vision">Open Hand's Vision</a></li>
+						<li><a href="/vision">Our Vision</a></li>
 						<li><a href="/statement-of-faith">Statement of Faith</a></li>
 						<li><a href="/charter">Charter</a></li>
 						<li><a href="/frequently-asked-questions">FAQ</a></li>
@@ -19,8 +18,7 @@
 				</li>
 				<li><a href="/get-involved">Get Involved</a></li>
 				<li><a href="/contact-us">Contact Us</a></li>
-			</ul>
-			
+			</ul>		
 			<ul class="right">
 				@if (Auth::check() && Auth::user()->user_type == 1)
 				<li class="has-dropdown">
