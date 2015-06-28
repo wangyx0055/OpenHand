@@ -13,8 +13,8 @@
 			</h2>
 			openhandministry@msn.com</br>
 			801-564-5964</br>
-			Open Hand Ministry</br>
-			P.O. Box 803, Clearfield, UT 84089
+			P.O. Box 803</br>
+			Clearfield, UT 84089
 		</div>
 		<div class="medium-4 small-12 columns">
 			<h2 class="oh-h2">

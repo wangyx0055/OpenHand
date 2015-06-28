@@ -11,6 +11,9 @@
 			We primarily purchase the food with money God has provided, although we also accept and give away non-expired food that has been donated. 
 			We buy the food locally.</br>
 			</br>
+			Open Hand is not a program for the homeless; there are great Rescue Missions better equipped to assist them.
+			We assist those that just can't make it without food help, the working poor, those on fixed incomes, those that are struggling to feed their children and/or themselves.</br>
+			</br>
 			We exist for one reason only: to help those in need with the love and compassion of the Biblical Jesus, and to show them that He loves them, too.
 		</div>
 	</div>
@@ -24,11 +27,11 @@
 			<p>
 				Food is distributed for 3 hours on both the 2nd and 4th Saturday of every month.</br>
 				Hours are from 10 am to 1 pm; the doors close at 12:45 pm.</br>
+				We distribute at the following location:</br>
 				</br>
-				Food is distributed at:</br>
-				Christian Heritage School</br>
-				5120 s 1050 w</br>
-				Riverdate, UT 84405</br>
+				<b>Christian Heritage School</b></br>
+				<b>5120 s 1050 w</b></br>
+				<b>Riverdale, UT 84405</b></br>
 			</p>
 			<a class="close-reveal-modal" aria-label="Close">&#215;</a>
 		</div>
@@ -42,8 +45,7 @@
 				<ul>
 					<li>Valid picture I.D.</li>
 					<li>A separate, other than driver's license, proof of address, a recent letter or bill</li>
-					<li>Food cannot be given to more than one person from the same address, if you have a large family just tell us and we will accomodate</li>
-					<li><i>You must come in person for food</i>. There are no exceptions.</li>
+					<li>Food cannot be given to more than one person from the same address, if you have a large family just tell us and we will accomodate. You must come in person for food there are no exceptions.</li>
 					<li><b>We do NOT require a statement saying you attend church nor do we require you to pray with us</b></li>
 				</ul>
 			</p>
@@ -58,7 +60,7 @@
 			<p>
 				There are dozens of different jobs to do and we need your help!
 				"Behind the scene" jobs include: stocking, packing, and sacking groceries. 
-				Other jobs are more relational and you will need to sign our <a href="#">Statement of Faith</a>; just hanging out and socializing, signing people in at the computers, helping with cookies and coffee, working with children, hauling food to the cars, etc. 
+				Other jobs are more relational and you will need to sign our <a href="/statement-of-faith">Statement of Faith</a>; just hanging out and socializing, signing people in at the computers, helping with cookies and coffee, working with children, hauling food to the cars, etc. 
 				All volunteers must go through a short orientation on the same day and time of distribution.</br>
 				<div class="row">
 					<div class="large-6 small-12 columns">

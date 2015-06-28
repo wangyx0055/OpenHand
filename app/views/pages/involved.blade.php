@@ -20,7 +20,7 @@
 			</ol>
 			All donations are tax deductible, and you will receive a receipt at the end of the year for your tax records.</br>
 			</br>
-			For food donations, please <a href="#">contact us</a> directly for additional information.
+			For food donations, please <a href="/contact-us">contact us</a> directly for additional information.
 			We always welcome food drives!</br>
 			</br>
 			For monetary donations, there are two ways to contribute:</br>
