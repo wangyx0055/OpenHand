@@ -1,24 +1,6 @@
 @extends('layouts.default')
 @section('content')
 <div class="row">
-	<div class="small-12 columns">
-		<div class="panel">
-			Open Hand is a place where the working poor, and those on fixed incomes, can come for food and solace. 
-			Every volunteer is there because that’s where they believe God wants them to be.</br>
-			</br>
-			Open Hand is entirely dependent on the Biblical God for provision. 
-			We don't get our food from the Utah Food Bank or any other government entity. 
-			We primarily purchase the food with money God has provided, although we also accept and give away non-expired food that has been donated. 
-			We buy the food locally.</br>
-			</br>
-			Open Hand is not a program for the homeless; there are great Rescue Missions better equipped to assist them.
-			We assist those that just can't make it without food help, the working poor, those on fixed incomes, those that are struggling to feed their children and/or themselves.</br>
-			</br>
-			We exist for one reason only: to help those in need with the love and compassion of the Biblical Jesus, and to show them that He loves them, too.
-		</div>
-	</div>
-</div>
-<div class="row">
 	<div class="large-4 small-12 columns">
 		<a href="#" data-reveal-id="modal1" class="button oh-button">Where and when do we distribute?</a>
 		
@@ -112,6 +94,24 @@
 				</div>			
 			</p>
 			<a class="close-reveal-modal" aria-label="Close">&#215;</a>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 columns">
+		<div class="panel">
+			Open Hand is a place where the working poor, and those on fixed incomes, can come for food and solace. 
+			Every volunteer is there because that’s where they believe God wants them to be.</br>
+			</br>
+			Open Hand is entirely dependent on the Biblical God for provision. 
+			We don't get our food from the Utah Food Bank or any other government entity. 
+			We primarily purchase the food with money God has provided, although we also accept and give away non-expired food that has been donated. 
+			We buy the food locally.</br>
+			</br>
+			Open Hand is not a program for the homeless; there are great Rescue Missions better equipped to assist them.
+			We assist those that just can't make it without food help, the working poor, those on fixed incomes, those that are struggling to feed their children and/or themselves.</br>
+			</br>
+			We exist for one reason only: to help those in need with the love and compassion of the Biblical Jesus, and to show them that He loves them, too.
 		</div>
 	</div>
 </div>

@@ -5,8 +5,8 @@ class PersonTableSeeder extends Seeder
 	public function run()
 	{
 		Person::create(array(
-			'first_name' => 'Austin',
-			'last_name' => 'Wheeler',
+			'first_name' => '',
+			'last_name' => '',
 			'person_type' => 1
 		));
 	}
