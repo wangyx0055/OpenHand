@@ -7,8 +7,10 @@
 		@include('includes.header')
 		
 		@include('includes.navbar')
-
-		@yield('content')
+		
+		<div class="oh-main">
+			@yield('content')
+		</div>
 
 		@include('includes.footer')
 	</body>

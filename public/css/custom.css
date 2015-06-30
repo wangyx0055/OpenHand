@@ -1,3 +1,13 @@
+body
+{
+
+}
+
+.oh-main
+{
+	min-height: 50%;
+}
+
 .oh-label
 {
 	font-size: 20px;
@@ -21,7 +31,7 @@
 
 .oh-footer
 {
-	background-color: #333333;
+	background-color: #666666;
 	color: white;
 }
 
@@ -48,6 +58,8 @@
 
 .oh-button
 {
+	margin-top: 12px;
+	margin-bottom: -6px;
 	height: 100%;
 	width: 95%;
 }
