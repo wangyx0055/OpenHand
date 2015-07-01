@@ -4,9 +4,9 @@
 		@include('includes.head')
 	</head>
 	<body>
-		@include('includes.header')
-		
 		@include('includes.navbar')
+		
+		@include('includes.header')
 
 		<div class="oh-main">
 			@yield('content')
