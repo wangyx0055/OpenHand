@@ -1,4 +1,4 @@
-<footer class="contain-to-grid oh-footer">
+<footer class="oh-footer">
 	<div class="row">
 		<div class="medium-4 small-12 columns">
 			<h2 class="oh-h2">
