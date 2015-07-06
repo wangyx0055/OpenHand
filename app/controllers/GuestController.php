@@ -12,7 +12,8 @@ class GuestController extends BaseController
 		$guest = Guest::find($id);
 		
 		return View::make('pages.database.edit')
-            ->with('guest', $guest);
+            ->with('guest', $guest)
+			->with('pageTitle', 'Volunteer Only');
 	}
 	
 	/*
@@ -55,7 +56,8 @@ class GuestController extends BaseController
 			if (Input::get('checkIn') == 2) { // check-in if option is selected
 				return $this->checkIn($guest->id);
 			} else {
-				return Redirect::to('/database/search');
+				return Redirect::to('/database/search')
+					->with('pageTitle', 'Volunteer Only');
 			}
 		}
 	}
@@ -99,7 +101,7 @@ class GuestController extends BaseController
 			
 			$guest->save();
 			
-			return Redirect::to('/database/add');
+			return $this->checkIn($guest->id);
 		}
 	}
 	
@@ -126,6 +128,7 @@ class GuestController extends BaseController
 		
 		$history->save();
 		
-		return Redirect::to('/database/search');
+		return Redirect::to('/database/search')
+			->with('pageTitle', 'Volunteer Only');
 	}
 }

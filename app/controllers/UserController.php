@@ -29,7 +29,8 @@ class UserController extends BaseController
 			);
 
 			if (Auth::attempt($userdata)) { // if user is valid, send to database search page
-				return Redirect::to('/database/search');
+				return Redirect::to('/database/search')
+					->with('pageTitle', 'Volunteer Only');
 			} else { // if user is not valid, redirect to login page
 				return Redirect::to('/login');
 			}
@@ -46,7 +47,8 @@ class UserController extends BaseController
 		Auth::logout(); 
 		
 		// send to login page
-		return Redirect::to('/login');
+		return Redirect::to('/login')
+			->with('pageTitle', 'Volunteer Only');
 	}
 	
 	/*
@@ -69,7 +71,8 @@ class UserController extends BaseController
 		} 
 		
 		return View::make('pages.database.search')
-			->with('results', $results);
+			->with('results', $results)
+			->with('pageTitle', 'Volunteer Only');
 	}
 	
 	/*
@@ -112,7 +115,8 @@ class UserController extends BaseController
 			->with('years', $stringOfYears)
 			->with('results', $results)
 			->with('beginTime', $beginTime)
-			->with('endTime', $endTime);
+			->with('endTime', $endTime)
+			->with('pageTitle', 'Volunteer Only');
 	}
 	
 	/*
@@ -158,7 +162,8 @@ class UserController extends BaseController
 			
 			$user->save();
 			
-			return Redirect::to('/database/admin/add');
+			return Redirect::to('/database/admin/show-all')
+				->with('pageTitle', 'Volunteer Only');
 		}
 	}
 	
@@ -172,7 +177,8 @@ class UserController extends BaseController
 		$user = User::find($id);
 		
 		return View::make('pages.database.admin.admin-edit')
-            ->with('user', $user);
+            ->with('user', $user)
+			->with('pageTitle', 'Volunteer Only');
 	}
 	
 	/*
@@ -217,7 +223,8 @@ class UserController extends BaseController
 			
 			$person->save();
 			
-			return Redirect::to('/database/admin/show-all');
+			return Redirect::to('/database/admin/show-all')
+				->with('pageTitle', 'Volunteer Only');
 		}
 	}
 	
@@ -227,11 +234,10 @@ class UserController extends BaseController
 	*/
 	public function destroy($id)
     {
-		$person = Person::find($user->person_id);
-        $user = User::find($id);
-        $user->delete();
-		$person->delete();
+		$user = User::find($id);
+		$user->delete();
 
-        return Redirect::to('/database/admin/show-all');
+        return Redirect::to('/database/admin/show-all')
+			->with('pageTitle', 'Volunteer Only');
     }
 }

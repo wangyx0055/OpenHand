@@ -1,10 +1,10 @@
 @extends('layouts.database')
 @section('content')
-@foreach($users as $key => $value)
+@foreach($results as $key => $value)
 <div class="oh-form-group">
 	<div class="row">
 		<div class="medium-3 small-12 columns">
-			{{ Person::find($value->person_id)->last_name }}, {{ Person::find($value->person_id)->first_name }}
+			{{ $value->last_name }}, {{ $value->first_name }}
 		</div>
 		<div class="medium-5 small-12 columns">
 			{{ $value->email }}

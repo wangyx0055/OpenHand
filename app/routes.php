@@ -127,11 +127,15 @@ Uses: app/views/pages/database/show.blade.php
 */
 Route::get('/database/show-all', function()
 {
-	$guests = Guest::all();
+	$results = DB::table('people')
+				->where('person_type', '=', '2')
+				->join('guests', 'people.id', '=', 'guests.person_id')
+				->orderBy('last_name', 'ASC')
+				->get();
 	
 	if (Auth::check()) // if valid user logged in, redirect to database search page
 		return View::make('pages.database.show')
-			->with('guests', $guests)
+			->with('results', $results)
 			->with('pageTitle', 'Volunteer Only');
 	else // if valid user is not logged in, redirect to login page
 		return View::make('pages.login')
@@ -144,11 +148,15 @@ Uses: app/views/pages/database/admin/show.blade.php
 */
 Route::get('/database/admin/show-all', function()
 {
-	$users = User::all();
+	$results = DB::table('people')
+				->where('person_type', '=', '1')
+				->join('users', 'people.id', '=', 'users.person_id')
+				->orderBy('last_name', 'ASC')
+				->get();
 	
 	if (Auth::check()) // if valid user logged in, redirect to database add page
 		return View::make('pages.database.admin.admin-show')
-			->with('users', $users)
+			->with('results', $results)
 			->with('pageTitle', 'Volunteer Only');
 	else // if valid user is not logged in, redirect to login page
 		return View::make('pages.login')
