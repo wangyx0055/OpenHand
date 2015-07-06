@@ -96,10 +96,10 @@ Uses: app/views/pages/database/add.blade.php
 */
 Route::get('/database/add', function()
 {
-	if (Auth::check()) // if valid user logged in, redirect to database add page
+	if (Auth::check()) // if valid user logged in
 		return View::make('pages.database.add')
 			->with('pageTitle', 'Volunteer Only');
-	else // if valid user is not logged in, redirect to login page
+	else // if valid user is not logged in
 		return View::make('pages.login')
 			->with('pageTitle', 'Volunteer Login');
 });
@@ -110,13 +110,11 @@ Uses: app/views/pages/database/search.blade.php
 */
 Route::get('/database/search', function()
 {
-	$results = '';
-	
-	if (Auth::check()) // if valid user logged in, redirect to database search page
+	if (Auth::check()) // if valid user logged in
 		return View::make('pages.database.search')
-			->with('results', $results)
+			->with('results', '')
 			->with('pageTitle', 'Volunteer Only');
-	else // if valid user is not logged in, redirect to login page
+	else // if valid user is not logged in
 		return View::make('pages.login')
 			->with('pageTitle', 'Volunteer Login');
 });
@@ -133,11 +131,11 @@ Route::get('/database/show-all', function()
 				->orderBy('last_name', 'ASC')
 				->get();
 	
-	if (Auth::check()) // if valid user logged in, redirect to database search page
+	if (Auth::check()) // if valid user logged in
 		return View::make('pages.database.show')
 			->with('results', $results)
 			->with('pageTitle', 'Volunteer Only');
-	else // if valid user is not logged in, redirect to login page
+	else // if valid user is not logged in
 		return View::make('pages.login')
 			->with('pageTitle', 'Volunteer Login');
 });
@@ -154,11 +152,15 @@ Route::get('/database/admin/show-all', function()
 				->orderBy('last_name', 'ASC')
 				->get();
 	
-	if (Auth::check()) // if valid user logged in, redirect to database add page
+	if (Auth::check() && Auth::user()->user_type == 2) // if valid admin logged in
 		return View::make('pages.database.admin.admin-show')
 			->with('results', $results)
-			->with('pageTitle', 'Volunteer Only');
-	else // if valid user is not logged in, redirect to login page
+			->with('pageTitle', 'Admin Only');
+	else if (Auth::check()) // if valid user logged in
+		return View::make('pages.database.search')
+			->with('pageTitle', 'Volunteer Only')
+			->with('results', '');
+	else // if valid user is not logged in
 		return View::make('pages.login')
 			->with('pageTitle', 'Volunteer Login');
 });
@@ -169,10 +171,14 @@ Uses: app/views/pages/database/admin/add.blade.php
 */
 Route::get('/database/admin/add', function()
 {
-	if (Auth::check()) // if valid user logged in, redirect to database add page
+	if (Auth::check() && Auth::user()->user_type == 2) // if valid admin logged in
 		return View::make('pages.database.admin.admin-add')
-			->with('pageTitle', 'Volunteer Only');
-	else // if valid user is not logged in, redirect to login page
+			->with('pageTitle', 'Admin Only');
+	else if (Auth::check()) // if valid user logged in
+		return View::make('pages.database.search')
+			->with('pageTitle', 'Volunteer Only')
+			->with('results', '');
+	else // if valid user is not logged in
 		return View::make('pages.login')
 			->with('pageTitle', 'Volunteer Login');
 });
@@ -183,10 +189,14 @@ Uses: app/views/pages/database/admin/edit.blade.php
 */
 Route::get('/database/admin/edit', function()
 {
-	if (Auth::check()) // if valid user logged in, redirect to database add page
+	if (Auth::check() && Auth::user()->user_type == 2) // if valid admin logged in
 		return View::make('pages.database.admin.admin-edit')
-			->with('pageTitle', 'Volunteer Only');
-	else // if valid user is not logged in, redirect to login page
+			->with('pageTitle', 'Admin Only');
+	else if (Auth::check()) // if valid user logged in
+		return View::make('pages.database.search')
+			->with('pageTitle', 'Volunteer Only')
+			->with('results', '');
+	else // if valid user is not logged in
 		return View::make('pages.login')
 			->with('pageTitle', 'Volunteer Login');
 });
@@ -215,12 +225,16 @@ Route::get('/database/admin/history', function()
 	
 	$results = '';
 	
-	if (Auth::check()) // if valid user logged in, redirect to database search page
+	if (Auth::check() && Auth::user()->user_type == 2) // if valid admin logged in
 		return View::make('pages.database.admin.history')
 			->with('years', $stringOfYears)
 			->with('results', $results)
-			->with('pageTitle', 'Volunteer Only');
-	else // if valid user is not logged in, redirect to login page
+			->with('pageTitle', 'Admin Only');
+	else if (Auth::check()) // if valid user logged in
+		return View::make('pages.database.search')
+			->with('pageTitle', 'Volunteer Only')
+			->with('results', '');
+	else // if valid user is not logged in
 		return View::make('pages.login')
 			->with('pageTitle', 'Volunteer Login');
 });

@@ -116,7 +116,7 @@ class UserController extends BaseController
 			->with('results', $results)
 			->with('beginTime', $beginTime)
 			->with('endTime', $endTime)
-			->with('pageTitle', 'Volunteer Only');
+			->with('pageTitle', 'Admin Only');
 	}
 	
 	/*
@@ -163,7 +163,7 @@ class UserController extends BaseController
 			$user->save();
 			
 			return Redirect::to('/database/admin/show-all')
-				->with('pageTitle', 'Volunteer Only');
+				->with('pageTitle', 'Admin Only');
 		}
 	}
 	
@@ -178,7 +178,7 @@ class UserController extends BaseController
 		
 		return View::make('pages.database.admin.admin-edit')
             ->with('user', $user)
-			->with('pageTitle', 'Volunteer Only');
+			->with('pageTitle', 'Admin Only');
 	}
 	
 	/*
@@ -224,7 +224,7 @@ class UserController extends BaseController
 			$person->save();
 			
 			return Redirect::to('/database/admin/show-all')
-				->with('pageTitle', 'Volunteer Only');
+				->with('pageTitle', 'Admin Only');
 		}
 	}
 	
@@ -238,6 +238,6 @@ class UserController extends BaseController
 		$user->delete();
 
         return Redirect::to('/database/admin/show-all')
-			->with('pageTitle', 'Volunteer Only');
+			->with('pageTitle', 'Admin Only');
     }
 }
