@@ -1,5 +1,12 @@
 @extends('layouts.default')
 @section('content')
+<div class="row">
+	<div class="small-12 columns">
+		<h1>
+			<small>Open Hand's Charter</small>
+		</h1>
+	</div>
+</div>
  <div class="row">
 	 <div class="small-12 columns">
 		 <div class="panel">

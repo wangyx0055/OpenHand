@@ -2,6 +2,13 @@
 @section('content')
 <div class="row">
 	<div class="small-12 columns">
+		<h1>
+			<small>Welcome to Open Hand Ministry</small>
+		</h1>
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 columns">
 		<div class="panel">
 			<ul class="accordion" data-accordion>
 				<li class="accordion-navigation">

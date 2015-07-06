@@ -2,6 +2,13 @@
 @section('content')
 <div class="row">
 	<div class="small-12 columns">
+		<h1>
+			<small>Open Hand's Vision</small>
+		</h1>
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 columns">
 		<div class="panel">
 			From its inception, Open Hand has believed that the Lord has called this ministry to these things:</br>
 			</br>

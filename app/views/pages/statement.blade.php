@@ -2,6 +2,13 @@
 @section('content')
 <div class="row">
 	<div class="small-12 columns">
+		<h1>
+			<small>Statement of Faith</small>
+		</h1>
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 columns">
 		<div class="panel">
 			Open Hand has been formed to demonstrate the fellowship of believers in the Lordship of Jesus Christ and to show Christ's love in action.
 			Open Hand is an inter-denominational ministry.</br>

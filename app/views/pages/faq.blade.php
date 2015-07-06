@@ -2,6 +2,13 @@
 @section('content')
 <div class="row">
 	<div class="small-12 columns">
+		<h1>
+			<small>Frequently Asked Questions</small>
+		</h1>
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 columns">
 		<div class="panel">
 			<ul class="accordion" data-accordion>
 				<li class="accordion-navigation">

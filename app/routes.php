@@ -6,7 +6,8 @@ Uses: app/views/pages/home.blade.php
 */
 Route::get('/', function()
 {
-	return View::make('pages.home');
+	return View::make('pages.home')
+		->with('pageTitle', 'Home');
 });
 
 /*
@@ -15,7 +16,8 @@ Uses: app/views/pages/guidelines.blade.php
 */
 Route::get('/ministry-guidelines', function()
 {
-	return View::make('pages.guidelines');
+	return View::make('pages.guidelines')
+		->with('pageTitle', 'Ministry Guidelines');
 });
 
 /*
@@ -24,7 +26,8 @@ Uses: app/views/pages/vision.blade.php
 */
 Route::get('/vision', function()
 {
-	return View::make('pages.vision');
+	return View::make('pages.vision')
+		->with('pageTitle', 'Vision');
 });
 
 /*
@@ -33,7 +36,8 @@ Uses: app/views/pages/statement.blade.php
 */
 Route::get('/statement-of-faith', function()
 {
-	return View::make('pages.statement');
+	return View::make('pages.statement')
+		->with('pageTitle', 'Statement of Faith');
 });
 
 /*
@@ -42,7 +46,8 @@ Uses: app/views/pages/contact.blade.php
 */
 Route::get('/contact-us', function()
 {
-	return View::make('pages.contact');
+	return View::make('pages.contact')
+		->with('pageTitle', 'Contact Us');
 });
 
 /*
@@ -51,7 +56,8 @@ Uses: app/views/pages/involved.blade.php
 */
 Route::get('/get-involved', function()
 {
-	return View::make('pages.involved');
+	return View::make('pages.involved')
+		->with('pageTitle', 'Get Involved');
 });
 
 /*
@@ -60,7 +66,8 @@ Uses: app/views/pages/charter.blade.php
 */
 Route::get('/charter', function()
 {
-	return View::make('pages.charter');
+	return View::make('pages.charter')
+		->with('pageTitle', 'Charter');
 });
 
 /*
@@ -69,7 +76,8 @@ Uses: app/views/pages/faq.blade.php
 */
 Route::get('/frequently-asked-questions', function()
 {
-	return View::make('pages.faq');
+	return View::make('pages.faq')
+		->with('pageTitle', 'Frequently Asked Questions');
 });
 
 /*
@@ -78,7 +86,8 @@ Uses: app/views/pages/login.blade.php
 */
 Route::get('/login', function()
 {
-	return View::make('pages.login');
+	return View::make('pages.login')
+		->with('pageTitle', 'Volunteer Login');
 });
 
 /*
@@ -88,9 +97,11 @@ Uses: app/views/pages/database/add.blade.php
 Route::get('/database/add', function()
 {
 	if (Auth::check()) // if valid user logged in, redirect to database add page
-		return View::make('pages.database.add');
+		return View::make('pages.database.add')
+			->with('pageTitle', 'Volunteer Only');
 	else // if valid user is not logged in, redirect to login page
-		return View::make('pages.login');
+		return View::make('pages.login')
+			->with('pageTitle', 'Volunteer Login');
 });
 
 /*
@@ -103,9 +114,11 @@ Route::get('/database/search', function()
 	
 	if (Auth::check()) // if valid user logged in, redirect to database search page
 		return View::make('pages.database.search')
-			->with('results', $results);
+			->with('results', $results)
+			->with('pageTitle', 'Volunteer Only');
 	else // if valid user is not logged in, redirect to login page
-		return View::make('pages.login');
+		return View::make('pages.login')
+			->with('pageTitle', 'Volunteer Login');
 });
 
 /*
@@ -118,9 +131,11 @@ Route::get('/database/show-all', function()
 	
 	if (Auth::check()) // if valid user logged in, redirect to database search page
 		return View::make('pages.database.show')
-			->with('guests', $guests);
+			->with('guests', $guests)
+			->with('pageTitle', 'Volunteer Only');
 	else // if valid user is not logged in, redirect to login page
-		return View::make('pages.login');
+		return View::make('pages.login')
+			->with('pageTitle', 'Volunteer Login');
 });
 
 /*
@@ -133,9 +148,11 @@ Route::get('/database/admin/show-all', function()
 	
 	if (Auth::check()) // if valid user logged in, redirect to database add page
 		return View::make('pages.database.admin.admin-show')
-			->with('users', $users);
+			->with('users', $users)
+			->with('pageTitle', 'Volunteer Only');
 	else // if valid user is not logged in, redirect to login page
-		return View::make('pages.login');
+		return View::make('pages.login')
+			->with('pageTitle', 'Volunteer Login');
 });
 
 /*
@@ -145,9 +162,11 @@ Uses: app/views/pages/database/admin/add.blade.php
 Route::get('/database/admin/add', function()
 {
 	if (Auth::check()) // if valid user logged in, redirect to database add page
-		return View::make('pages.database.admin.admin-add');
+		return View::make('pages.database.admin.admin-add')
+			->with('pageTitle', 'Volunteer Only');
 	else // if valid user is not logged in, redirect to login page
-		return View::make('pages.login');
+		return View::make('pages.login')
+			->with('pageTitle', 'Volunteer Login');
 });
 
 /*
@@ -157,9 +176,11 @@ Uses: app/views/pages/database/admin/edit.blade.php
 Route::get('/database/admin/edit', function()
 {
 	if (Auth::check()) // if valid user logged in, redirect to database add page
-		return View::make('pages.database.admin.admin-edit');
+		return View::make('pages.database.admin.admin-edit')
+			->with('pageTitle', 'Volunteer Only');
 	else // if valid user is not logged in, redirect to login page
-		return View::make('pages.login');
+		return View::make('pages.login')
+			->with('pageTitle', 'Volunteer Login');
 });
 
 /*
@@ -189,9 +210,11 @@ Route::get('/database/admin/history', function()
 	if (Auth::check()) // if valid user logged in, redirect to database search page
 		return View::make('pages.database.admin.history')
 			->with('years', $stringOfYears)
-			->with('results', $results);
+			->with('results', $results)
+			->with('pageTitle', 'Volunteer Only');
 	else // if valid user is not logged in, redirect to login page
-		return View::make('pages.login');
+		return View::make('pages.login')
+			->with('pageTitle', 'Volunteer Login');
 });
 
 /*
