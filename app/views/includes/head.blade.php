@@ -1,6 +1,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="Open Hand Ministry is a non-profit food pantry dedicated to helping the working poor or those on a fixed income.">
+<meta name="keywords" content="food pantry, layton, riverdale, ogden, roy, hooper, west haven, volunteer, open hand ministry, open hand, utah">
+<meta name="author" content="Austin Wheeler">
 
 <title>{{ $pageTitle }}</title>
 
