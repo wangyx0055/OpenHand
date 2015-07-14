@@ -1,9 +1,6 @@
 body
 {
-	background-image: url('http://preview.8e3i4tgtgmmcmcxr7piplfwo7w42huxrnsc1q0a8ld6lxr.box.codeanywhere.com/images/background.svg');
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	background-attachment: fixed;		
+	
 }
 
 .oh-main
@@ -69,4 +66,5 @@ body
 .oh-accordion
 {
 	margin-bottom: 32px;
+	margin-right: 20px;
 }

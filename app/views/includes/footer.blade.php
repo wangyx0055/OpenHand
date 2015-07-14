@@ -30,8 +30,8 @@
 	</div>
 </footer>
 
-{{ HTML::script('js/vendor/jquery.js'); }}
-{{ HTML::script('js/foundation.min.js'); }}
+<script type="text/javascript" src="http://www.openhandministry.org/js/vendor/jquery.js"></script>
+<script type="text/javascript" src="http://www.openhandministry.org/js/foundation.min.js"></script>
 <script>
 	$(document).foundation();
 </script>
