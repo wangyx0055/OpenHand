@@ -61,13 +61,15 @@ class UserController extends BaseController
 		$search = Input::get('search');
 		
 		if (Input::get('searchBy') == 0) { // search database for id with corresponding last_name value
-			$results = Person::where(function ($query) use ($search) {
+			/*$results = Person::where(function ($query) use ($search) {
 				$query->where('last_name', 'LIKE', '%' . $search . '%');
-			})->where('person_type', '=', 2)->get();
+			})->where('person_type', '=', 2)->get();*/
+			$results = $results = Person::getByLastName($search)->get();
 		} else if (Input::get('searchBy') == 1) { // search database for id with corresponding first_name value
-			$results = Person::where(function ($query) use ($search) {
+			/*$results = Person::where(function ($query) use ($search) {
 				$query->where('first_name', 'LIKE', '%' . $search . '%');
-			})->where('person_type', '=', 2)->get();
+			})->where('person_type', '=', 2)->get();*/
+			$results = $results = Person::getByFirstName($search)->get();
 		} 
 		
 		return View::make('pages.database.search')
@@ -104,12 +106,8 @@ class UserController extends BaseController
 		// get input from form
 		$beginTime = Input::get('from_year') . '-' . Input::get('from_month');
 		$endTime = Input::get('to_year') . '-' . Input::get('to_month');
-		
-		// search database for all records between the two dates and count them
-		$results = DB::table('guest_histories')
-			->where('date_of_visit', '>=', date('Y-m', strtotime($beginTime . " +1 days")))
-			->where('date_of_visit', '<=', date('Y-m', strtotime($endTime . " +31 days")))
-			->count();
+
+		$results = GuestHistory::getGuestCount($beginTime, $endTime)->count();
 	
 		return View::make('pages.database.admin.history')
 			->with('years', $stringOfYears)

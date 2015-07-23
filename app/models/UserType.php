@@ -2,5 +2,5 @@
 
 class UserType extends Eloquent
 {
-	
+
 }

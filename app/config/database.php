@@ -6,12 +6,12 @@ $url = gethostname();
 
 if (strpos($url, 'codeanywhere') !== false) {
 	$database = 'forge';
-	$host = 'localhost';
+	$host = "127.0.0.1";
 	$username = 'forge';
 	$password = '';
 } else {
 	$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-	$host = $url["host"];
+	$host = $url["127.0.0.1"];
 	$username = $url["user"];
 	$password = $url["pass"];
 	$database = substr($url["path"], 1);
