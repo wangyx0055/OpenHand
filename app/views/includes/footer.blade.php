@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="medium-4 small-12 columns">
 			<h2 class="oh-h2">
-				Social
+				Share Us
 			</h2>
 			<span class='st_facebook_large' displayText='Facebook'></span>
 			<span class='st_twitter_large' displayText='Tweet'></span>

@@ -6,12 +6,16 @@
 	<body>
 		@include('includes.header')
 		
-		@include('includes.navbar')
+		@include('includes.database-navbar')
 
 		<div class="oh-main">
 			@yield('content')
 		</div>
-
-		@include('includes.footer')
+		
+		<script type="text/javascript" src="http://www.openhandministry.org/js/vendor/jquery.js"></script>
+		<script type="text/javascript" src="http://www.openhandministry.org/js/foundation.min.js"></script>
+		<script>
+			$(document).foundation();
+		</script>
 	</body>
 </html>
