@@ -40,8 +40,10 @@ class GuestController extends BaseController
 			$guest = Guest::find($id);
 			
 			// get data from form
+			$guest->spouse_name = Input::get('spouse_name');
 			$guest->address = Input::get('address');
 			$guest->zipcode = Input::get('zipcode');
+			$guest->note = Input::get('note');
 			
 			$guest->save();
 			
@@ -95,9 +97,11 @@ class GuestController extends BaseController
 			$guest = new Guest;
 			
 			$guest->person_id = $person->id;
+			$guest->spouse_name = Input::get('spouse_name');
 			$guest->address = Input::get('address');
 			$guest->zipcode = Input::get('zipcode');
 			$guest->last_visit = date("Y-m-d H:i:s");
+			$guest->note = Input::get('note');
 			
 			$guest->save();
 			
@@ -131,4 +135,9 @@ class GuestController extends BaseController
 		return Redirect::to('/database/search')
 			->with('pageTitle', 'Volunteer Only');
 	}
+	
+	/*
+	Name: addNote
+	Purpose: add note to a guest
+	*/
 }

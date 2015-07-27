@@ -4,7 +4,7 @@
 <div class="oh-form-group">
 	<div class="row">
 		<div class="medium-3 small-12 columns">
-			{{ $value->last_name }}, {{ $value->first_name }}
+			{{ $value->last_name }}, {{ $value->first_name }}/{{ $value->spouse_name }}
 		</div>
 		<div class="medium-5 small-12 columns">
 			{{ $value->address }}, {{ $value->zipcode }}
@@ -20,6 +20,9 @@
 		</div>
 		<div class="medium-2 small-12 columns">
 			<a class="button tiny" href="{{ URL::to('guests/' . $value->id . '/edit') }}">Edit</a>
+		</div>
+		<div class="small-12 columns">
+			<i>{{ $value->note }}</i>
 		</div>
 	</div>
 </div>
