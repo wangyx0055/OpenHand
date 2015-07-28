@@ -2,7 +2,7 @@
 
 date_default_timezone_set('America/Denver');
 
-/*$url = gethostname();
+$url = gethostname();
 
 if (strpos($url, 'codeanywhere') !== false) {
 	$database = 'forge';
@@ -15,7 +15,7 @@ if (strpos($url, 'codeanywhere') !== false) {
 	$username = $url["user"];
 	$password = $url["pass"];
 	$database = substr($url["path"], 1);
-}*/
+}
 
 return array(
 
@@ -71,14 +71,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			/*'host'      => $host,
+			'host'      => $host,
 			'database'  => $database,
 			'username'  => $username,
-			'password'  => $password,*/
-			'host' => getenv('db_host'),
-			'database' => 'forge',
-			'username' => getenv('db_username'),
-			'password' => getenv('db_password'),
+			'password'  => $password,
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
