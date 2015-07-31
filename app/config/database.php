@@ -10,14 +10,14 @@ if (strpos($url, 'codeanywhere') !== false) {
 	$username = 'forge';
 	$password = '';
 } else {
-	/*$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+	$url = parse_url(getenv("divine-silence"));
 	$host = $url["host"];
 	$username = $url["user"];
 	$password = $url["pass"];
-	$database = substr($url["path"], 1);*/
-	$host = "127.0.0.1";
+	$database = substr($url["path"], 1);
+	/*$host = "127.0.0.1";
 	$username = $_ENV['db_username'];
-	$password = $_ENV['db_password'];
+	$password = $_ENV['db_password'];*/
 }
 
 return array(
