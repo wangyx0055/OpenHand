@@ -75,10 +75,10 @@ return array(
 			'database'  => $database,
 			'username'  => $username,
 			'password'  => $password,*/
-			'host' => env('db_host', 'localhost'),
-			'database' => env('db_database', 'forge'),
-			'username' => env('db_username', 'forge'),
-			'password' => '',
+			'host' => getenv('db_host'),
+			'database' => 'forge',
+			'username' => getenv('db_username'),
+			'password' => getenv('db_password')
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
