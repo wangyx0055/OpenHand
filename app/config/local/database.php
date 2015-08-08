@@ -22,10 +22,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => getenv('DB_HOST'),
+			'host'      => 'localhost',
 			'database'  => 'homestead',
-			'username'  => getenv('DB_USER'),
-			'password'  => getenv('DB_PASS'),
+			'username'  => 'homestead',
+			'password'  => 'secret',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
