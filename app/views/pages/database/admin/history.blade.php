@@ -34,7 +34,7 @@
 	</div>
 	<div class="row">
 		<div class="small-12 columns">
-			{{ Form::submit('Search', array('class' => 'button tiny')) }}
+			{{ Form::submit('Search', array('class' => 'button small')) }}
 		</div>
 	</div>
 </div>

@@ -25,7 +25,7 @@
 	</div>
 	<div class="row">
 		<div class="small-12 columns">
-			{{ Form::submit('Login', array('class' => 'button tiny')) }}
+			{{ Form::submit('Login', array('class' => 'button small')) }}
 		</div>
 	</div>
 </div>

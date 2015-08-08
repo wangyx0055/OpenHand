@@ -37,6 +37,7 @@ body
 .oh-form-group
 {
 	background-color: white;
+	border-radius: 8px;
 	padding: 12px 6px 12px 6px;
 	margin: 10px auto 10px auto;
 }
@@ -70,14 +71,6 @@ body
 {
 	color: black;
 	text-decoration: none;
-}
-
-.oh-button
-{
-	margin-top: 12px;
-	margin-bottom: -6px;
-	height: 100%;
-	width: 95%;
 }
 
 .oh-accordion

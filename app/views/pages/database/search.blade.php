@@ -30,7 +30,7 @@
 				@if (date('Y-m-d', strtotime(DB::table('guests')->where('person_id', '=', $value->id)->pluck('last_visit'))) == date('Y-m-d', time()))
 				{{ Form::label('', 'Checked-in at ' . date('H:i:s', strtotime(DB::table('guests')->where('person_id', '=', $value->id)->pluck('last_visit'))), array('class' => 'oh-label-small')) }}
 				@else
-				{{ Form::submit('Check-in', array('class' => 'button tiny')) }}
+				{{ Form::submit('Check-in', array('class' => 'button small')) }}
 				@endif
 			{{ Form::close() }}
 		</div>
