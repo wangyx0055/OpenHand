@@ -2,23 +2,6 @@
 
 date_default_timezone_set('America/Denver');
 
-/*$url = gethostname();
-
-if (strpos($url, 'codeanywhere') !== false) {
-	$host = getenv('DB_HOST');//"127.0.0.1";
-	$username = getenv('DB_USER');//'forge';
-	$password = getenv('DB_PASS');//'';
-} else {
-	$url = parse_url(getenv("divine-silence"));
-	$host = $url["host"];
-	$username = $url["user"];
-	$password = $url["pass"];
-	$database = substr($url["path"], 1);
-	//$host = "127.0.0.1";
-	//$username = 'forge';
-	//$password = 'moB7dNVcb9i5E49CcohF';
-}*/
-
 return array(
 
 	/*
@@ -73,10 +56,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => getenv('DB_HOST'),//$host
+			'host'      => getenv('DB_HOST'),
 			'database'  => 'forge',
-			'username'  => getenv('DB_USER'),//$username
-			'password'  => getenv('DB_PASS'),//$password
+			'username'  => getenv('DB_USER'),
+			'password'  => getenv('DB_PASS'),
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

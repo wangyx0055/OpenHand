@@ -6,6 +6,7 @@
 		</ul>
 		<section class="top-bar-section">
 			<ul class="left">
+				<li><a href="/">Home</a></li>
 				<li class="has-dropdown">
 					<a href="#">About Us</a>
 					<ul class="dropdown">
