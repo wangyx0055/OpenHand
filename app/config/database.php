@@ -56,10 +56,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => getenv('DB_HOST'),
+			'host'      => 'localhost',
 			'database'  => 'forge',
-			'username'  => getenv('DB_USER'),
-			'password'  => getenv('DB_PASS'),
+			'username'  => 'forge',
+			'password'  => 'moB7dNVcb9i5E49CcohF',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

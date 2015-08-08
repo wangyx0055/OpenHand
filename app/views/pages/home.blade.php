@@ -1,17 +1,27 @@
 @extends('layouts.default')
 @section('content')
 <div class="row">
-	<div class="small-12 columns">
-		<h1>
-			<small>Welcome to Open Hand Ministry</small>
-		</h1>
-	</div>
-</div>
-<div class="row">
 	<ul class="accordion" data-accordion>
-		<li class="accordion-navigation">
-			<a href="#panel1">Where and when do we distribute?</a>
+		<li class="accordion-navigation oh-accordion">
+			<a href="#panel1">What is Open Hand?</a>
 			<div id="panel1" class="content">
+				Open Hand is a place where the working poor, and those on fixed incomes, can come for food and solace. 
+				Every volunteer is there because that’s where they believe God wants them to be.</br>
+				</br>
+				Open Hand is entirely dependent on the Biblical God for provision. 
+				We don't get our food from the Utah Food Bank or any other government entity. 
+				We primarily purchase the food with money God has provided, although we also accept and give away non-expired food that has been donated. 
+				We buy the food locally.</br>
+				</br>
+				Open Hand is not a program for the homeless; there are great Rescue Missions better equipped to assist them.
+				We assist those that just can't make it without food help, the working poor, those on fixed incomes, those that are struggling to feed their children and/or themselves.</br>
+				</br>
+				We exist for one reason only: to help those in need with the love and compassion of the Biblical Jesus, and to show them that He loves them, too.
+			</div>
+		</li>
+		<li class="accordion-navigation oh-accordion">
+			<a href="#panel2">Where and when do we distribute?</a>
+			<div id="panel2" class="content">
 				Food is distributed for 3 hours on both the 2nd and 4th Saturday of every month.</br>
 				Hours are from 10 am to 1 pm; the doors close at 12:45 pm.</br>
 				We distribute at the following location:</br>
@@ -21,9 +31,9 @@
 				<b>Riverdale, UT 84405</b></br>
 			</div>
 		</li>
-		<li class="accordion-navigation">
-			<a href="#panel2">Do I need to bring anything to get help?</a>
-			<div id="panel2" class="content">
+		<li class="accordion-navigation oh-accordion">
+			<a href="#panel3">Do I need to bring anything to get help?</a>
+			<div id="panel3" class="content">
 				<ul>
 					<li>Valid picture I.D.</li>
 					<li>A separate, other than driver's license, proof of address, a recent letter or bill</li>
@@ -32,9 +42,9 @@
 				</ul>
 			</div>
 		</li>
-		<li class="accordion-navigation">
-			<a href="#panel3">What can I do to help Open Hand?</a>
-			<div id="panel3" class="content">
+		<li class="accordion-navigation oh-accordion">
+			<a href="#panel4">What can I do to help Open Hand?</a>
+			<div id="panel4" class="content">
 				There are dozens of different jobs to do and we need your help!
 				"Behind the scene" jobs include: stocking, packing, and sacking groceries. 
 				Other jobs are more relational and you will need to sign our <a href="/statement-of-faith">Statement of Faith</a>; just hanging out and socializing, signing people in at the computers, helping with cookies and coffee, working with children, hauling food to the cars, etc. 
@@ -90,21 +100,5 @@
 			</div>
 		</li>
 	</ul>
-	<div class="small-12 columns">
-		<div class="panel">
-			Open Hand is a place where the working poor, and those on fixed incomes, can come for food and solace. 
-			Every volunteer is there because that’s where they believe God wants them to be.</br>
-			</br>
-			Open Hand is entirely dependent on the Biblical God for provision. 
-			We don't get our food from the Utah Food Bank or any other government entity. 
-			We primarily purchase the food with money God has provided, although we also accept and give away non-expired food that has been donated. 
-			We buy the food locally.</br>
-			</br>
-			Open Hand is not a program for the homeless; there are great Rescue Missions better equipped to assist them.
-			We assist those that just can't make it without food help, the working poor, those on fixed incomes, those that are struggling to feed their children and/or themselves.</br>
-			</br>
-			We exist for one reason only: to help those in need with the love and compassion of the Biblical Jesus, and to show them that He loves them, too.
-		</div>
-	</div>
 </div>
 @stop

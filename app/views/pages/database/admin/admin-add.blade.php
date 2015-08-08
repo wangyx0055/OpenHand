@@ -1,7 +1,7 @@
 @extends('layouts.database')
 @section('content')
 {{ Form::open(array('url' => 'users')) }}
-<div class="oh-form-group">
+<div class="row oh-form-group">
 	<div class="row">
 		<div class="small-12 columns">
 			{{ HTML::ul($errors->all()) }}

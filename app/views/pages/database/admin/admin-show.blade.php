@@ -1,7 +1,7 @@
 @extends('layouts.database')
 @section('content')
 @foreach($results as $key => $value)
-<div class="oh-form-group">
+<div class="row oh-form-group">
 	<div class="row">
 		<div class="medium-3 small-12 columns">
 			{{ $value->last_name }}, {{ $value->first_name }}

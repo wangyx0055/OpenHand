@@ -2,14 +2,10 @@
 @section('content')
 <div class="row">
 	<div class="small-12 columns">
-		<h1>
-			<small>Getting Involved in Open Hand</small>
-		</h1>
-	</div>
-</div>
-<div class="row">
-	<div class="small-12 columns">
 		<div class="panel">
+			<h1>
+				<small>Getting Involved in Open Hand</small>
+			</h1>
 			<ol>
 				<li>
 					You can <b>pray</b> for Open Hand. 

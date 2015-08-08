@@ -1,6 +1,22 @@
 body
 {
-	
+	background-attachment: fixed;
+	background-image: url("http://preview.8e3i4tgtgmmcmcxr7piplfwo7w42huxrnsc1q0a8ld6lxr.box.codeanywhere.com/images/background.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+.accordion
+{
+	margin-bottom: 32px;
+	margin-top: 32px;
+}
+
+.panel
+{
+	background-color: white;
+	opacity: 0.9;
 }
 
 .oh-main
@@ -20,8 +36,9 @@ body
 
 .oh-form-group
 {
+	background-color: white;
 	padding: 12px 6px 12px 6px;
-	margin: 10px 0 10px 0;
+	margin: 10px auto 10px auto;
 }
 
 .oh-header
@@ -65,6 +82,5 @@ body
 
 .oh-accordion
 {
-	margin-bottom: 32px;
 	margin-right: 20px;
 }

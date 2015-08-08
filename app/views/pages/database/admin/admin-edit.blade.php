@@ -1,7 +1,7 @@
 @extends('layouts.database')
 @section('content')
 {{ Form::model($user, array('route' => array('users.update', $user->id), 'method' => 'PUT')) }}
-<div class="oh-form-group">
+<div class="row oh-form-group">
 	<div class="row">
 		<div class="small-12 columns">
 			{{ HTML::ul($errors->all()) }}

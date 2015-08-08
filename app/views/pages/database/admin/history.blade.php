@@ -1,7 +1,7 @@
 @extends('layouts.database')
 @section('content')
 {{ Form::open(array('url' => 'history_search')) }}
-<div class="oh-form-group">
+<div class="row oh-form-group">
 	<div class="row">
 		<div class="large-2 small-12 columns">
 			{{ Form::label('from_date', 'From', array('class' => 'oh-label')) }}

@@ -1,15 +1,11 @@
 @extends('layouts.default')
 @section('content')
-<div class="row">
-	<div class="small-12 columns">
-		<h1>
-			<small>Open Hand's Charter</small>
-		</h1>
-	</div>
-</div>
  <div class="row">
 	 <div class="small-12 columns">
 		 <div class="panel">
+			<h1>
+				<small>Open Hand's Charter</small>
+			</h1>
 			Our goal is to glorify Christ in all that we do by expressing His love in any and every way possible to <b>every</b> person that comes for food or comfort. 
 			In everything we do, Christ should be seen.</br>
 			</br>

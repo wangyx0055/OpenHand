@@ -1,15 +1,8 @@
 @extends('layouts.default')
 @section('content')
 <div class="row">
-	<div class="small-12 columns">
-		<h1>
-			<small>Frequently Asked Questions</small>
-		</h1>
-	</div>
-</div>
-<div class="row">
-	<ul class="accordion oh-accordion" data-accordion>
-		<li class="accordion-navigation">
+	<ul class="accordion" data-accordion>
+		<li class="accordion-navigation oh-accordion">
 			<a href="#panel1">What is Open Hand?</a>
 			<div id="panel1" class="content">
 				Firstly, Open Hand is a ministry serving the Body of Christ by giving food, comforat, and support during difficult times-reminding them of the great love God has for them.</br>
@@ -21,7 +14,7 @@
 				We do this through providing food.</br>
 			</div>
 		</li>
-		<li class="accordion-navigation">
+		<li class="accordion-navigation oh-accordion">
 			<a href="#panel2">When and where do we distribute?</a>
 			<div id="panel2" class="content">
 				Food is distributed for 3 hours on both the 2nd and 4th Saturday of every month.
@@ -31,7 +24,7 @@
 				Riverdate, UT 84405</br>
 			</div>
 		</li>
-		<li class="accordion-navigation">
+		<li class="accordion-navigation oh-accordion">
 			<a href="#panel3">What does it cost to run Open Hand?</a>
 			<div id="panel3" class="content">
 				Depending on the time of year, an average month can be between $8,000 and $20,000+. 
@@ -42,14 +35,14 @@
 				This is an expensive ministry (in our human eyes), but we have never been left wanting. Ever. He is a loving, awesome provider for all to see!</i></br>
 			</div>
 		</li>
-		<li class="accordion-navigation">
+		<li class="accordion-navigation oh-accordion">
 			<a href="#panel4">How many people are served?</a>
 			<div id="panel4" class="content">
 				Depending on the time of year, an average Saturday could see between 150 and 250 families come through for food in a 3 hour period. 
 				A typical Saturday could bring as many as 1000 people needing food and other help- all needing to see (or be reminded of) Christ’s love and provision.</br>
 			</div>
 		</li>
-		<li class="accordion-navigation">
+		<li class="accordion-navigation oh-accordion">
 			<a href="#panel5">What does a volunteer day look like?</a>
 			<div id="panel5" class="content">
 				A typical distribution day will start with volunteers arriving to set up at 8:30 am, devotion and communion at 9, with doors opening to the public at 10.
@@ -60,13 +53,13 @@
 				Even with prayer time, the evening is usually complete by 9 pm.</br>
 			</div>
 		</li>
-		<li class="accordion-navigation">
+		<li class="accordion-navigation oh-accordion">
 			<a href="#panel6">Who does Open Hand serve?</a>
 			<div id="panel6" class="content">
 				Open Hand serves the working poor and those on fixed incomes-we are not equipped to handle the homeless.</br>
 			</div>
 		</li>
-		<li class="accordion-navigation">
+		<li class="accordion-navigation oh-accordion">
 			<a href="#panel7">How can I help?</a>
 			<div id="panel7" class="content">
 				There are dozens of different jobs to do and we need your help!
@@ -119,7 +112,7 @@
 				</ol>
 			</div>
 		</li>
-		<li class="accordion-navigation">
+		<li class="accordion-navigation oh-accordion">
 			<a href="#panel8">What does Open Hand require from those seeking assistance?</a>
 			<div id="panel8" class="content">
 				<ul>
