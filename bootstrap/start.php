@@ -25,9 +25,8 @@ $app = new Illuminate\Foundation\Application;
 */
 
 $env = $app->detectEnvironment(array(
-
+	'production' => array('digitalocean.com'),
 	'local' => array('homestead'),
-
 ));
 
 /*
