@@ -25,7 +25,7 @@ $app = new Illuminate\Foundation\Application;
 */
 
 $env = $app->detectEnvironment(array(
-	'production' => array('digitalocean.com'),
+	'production' => array('forge.laravel.com'),
 	'local' => array('homestead'),
 ));
 
