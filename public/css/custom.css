@@ -1,7 +1,7 @@
 body
 {
 	background-attachment: fixed;
-	background-image: url("http://openhandministry.org/images/background.png");
+	background-image: url("http://preview.8e3i4tgtgmmcmcxr7piplfwo7w42huxrnsc1q0a8ld6lxr.box.codeanywhere.com/images/background.png");
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -16,7 +16,6 @@ body
 .panel
 {
 	background-color: white;
-	opacity: 0.9;
 }
 
 .oh-main
@@ -39,7 +38,7 @@ body
 	background-color: white;
 	border-radius: 8px;
 	padding: 12px 6px 12px 6px;
-	margin: 10px 5px 10px 5px;
+	margin: 10px auto 10px auto;
 }
 
 .oh-header
