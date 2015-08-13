@@ -1,0 +1,73 @@
+body
+{
+	background-attachment: fixed;
+	background-image: url("http://www.openhandministry.org/images/background.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+.contain-to-grid /* Foundation vanilla */
+{
+  	background: #1a1a1a; 
+}
+
+.top-bar /* Foundation vanilla */
+{
+    background: #1a1a1a;
+}
+
+.top-bar-section li a:not(.button) /* Foundation vanilla */
+{
+    background: #1a1a1a !important;   
+}
+
+.top-bar-section li a:not(.button):hover /* Foundation vanilla */
+{
+    background: #333333 !important;   
+}
+
+.top-bar-section ul li.active > a /* Foundation vanilla */
+{
+    background: #1a1a1a !important;   
+}
+
+.top-bar-section ul li.active > a:hover /* Foundation vanilla */
+{
+    background: #333333 !important;   
+}
+
+.panel /* Foundation vanilla */
+{
+	background-color: white;
+}
+
+.accordion /* Foundation vanilla */
+{
+	margin: 20px 32px 0 32px;
+}
+
+.main-content
+{
+	min-height: 23.275rem;
+}
+
+.header
+{
+	background-color: white;
+}
+
+.text-white 
+{
+	color: white;
+}
+
+.text-white a
+{
+	color: white;
+}
+
+.header
+{
+	background-color: white;
+}

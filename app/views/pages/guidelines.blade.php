@@ -2,7 +2,7 @@
 @section('content')
 <div class="row">
 	<ul class="accordion" data-accordion>
-		<li class="accordion-navigation oh-accordion">
+		<li class="accordion-navigation ">
 			<a href="#panel1">How does Open Hand deal with the Homeless?</a>
 			<div id="panel1" class="content">
 				<u>WITHOUT EXCEPTION</u>, Open Hand seeks to express Christ's love to everyone - homeless or not.
@@ -60,7 +60,7 @@
 				</ol>
 			</div>
 		</li>
-		<li class="accordion-navigation oh-accordion">
+		<li class="accordion-navigation ">
 			<a href="#panel2">Some Spiritual Warfare to think about</a>
 			<div id="panel2" class="content">
 				"<i>Don't forget to show hospitality to strangers, for some who have done this have entertained angels without realizing it!</i>" <b>Hebrews 13:2</b></br>
@@ -78,7 +78,7 @@
 				"<i>We should live in this evil world with wisdom, righteousness, and devotion to God, while we look forward with hope to that wonderful day when the glory of our great God and Savior, Jesus Christ, will be revealed.</i>" <b>Titus 2:12 - 13</b></br>
 			</div>
 		</li>
-		<li class="accordion-navigation oh-accordion">
+		<li class="accordion-navigation ">
 			<a href="#panel3">Open Hand philosophy about the items we give</a>
 			<div id="panel3" class="content">
 				<b>Open Hand never wants a recipient to perceive that we care so little for them that they are getting second-rate food or materials</b>.
@@ -103,7 +103,7 @@
 				These situations are the exception and not the rule.</br>
 			</div>
 		</li>
-		<li class="accordion-navigation oh-accordion">
+		<li class="accordion-navigation ">
 			<a href="#panel4">What about Open Hand volunteers that use the pantry?</a>
 			<div id="panel4" class="content">
 				There will always be our deeply loved brothers and sisters within Open Hand that are in need of food. 
@@ -122,7 +122,7 @@
 				For the Law of Moses says, “You must not muzzle an ox to keep it from eating as it treads out the grain.</i>" <b>1 Corinthians 9</b></br>
 			</div>
 		</li>
-		<li class="accordion-navigation oh-accordion">
+		<li class="accordion-navigation ">
 			<a href="#panel5">What about Open Hand volunteers bringing their children?</a>
 			<div id="panel5" class="content">
 				Routinely, a volunteer will ask about bringing their child to Open Hand. 
@@ -150,7 +150,7 @@
 				<u>If you think they’d do well and enjoy serving then they are <b>always welcome!</b></u></br>
 			</div>
 		</li>
-		<li class="accordion-navigation oh-accordion">
+		<li class="accordion-navigation ">
 			<a href="#panel6">Youth & Others Requesting to Volunteer or “Repay an Obligation</a>
 			<div id="panel6" class="content">
 				We’ve had people ask – sometimes a church member, but more often a recipient – if they or their child could work in this pantry as part of a community service obligation.</br>

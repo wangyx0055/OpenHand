@@ -1,7 +1,7 @@
 @extends('layouts.default')
 @section('content')
 {{ Form::open(array('url' => 'login')) }}
-<div class="row oh-form-group">
+<div class="row panel">
 	<div class="row">
 		<div class="small-12 columns">
 			{{ HTML::ul($errors->all()) }}

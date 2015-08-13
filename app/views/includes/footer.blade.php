@@ -1,14 +1,14 @@
-<footer class="contain-to-grid oh-footer">
+<footer class="contain-to-grid text-white">
 	<div class="row">
 		<div class="medium-4 small-12 columns">
-			<h2 class="oh-h2">
+			<h2 class="text-white">
 				Share Us
 			</h2>
 			<span class='st_facebook_large' displayText='Facebook'></span>
 			<span class='st_twitter_large' displayText='Tweet'></span>
 		</div>
 		<div class="medium-4 small-12 columns">
-			<h2 class="oh-h2">
+			<h2 class="text-white">
 				Contact
 			</h2>
 			openhandministry@msn.com</br>
@@ -17,7 +17,7 @@
 			Clearfield, UT 84089
 		</div>
 		<div class="medium-4 small-12 columns">
-			<h2 class="oh-h2">
+			<h2 class="text-white">
 				About
 			</h2>
 			<ul class="no-bullet">

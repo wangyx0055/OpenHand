@@ -8,7 +8,7 @@
 		
 		@include('includes.navbar')
 		
-		<div class="oh-main">
+		<div class="main-content">
 			@yield('content')
 		</div>
 

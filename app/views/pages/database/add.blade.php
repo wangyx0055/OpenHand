@@ -1,49 +1,49 @@
 @extends('layouts.database')
 @section('content')
 {{ Form::open(array('url' => 'guests')) }}
-<div class="row oh-form-group">
+<div class="row panel">
 	<div class="row">
 		<div class="small-12 columns">
 			{{ HTML::ul($errors->all()) }}
 		</div>
 	</div>
-	<div class="row">
-		<div class="large-2 small-12 columns">
-			{{ Form::label('first_name', 'First Name', array('class' => 'oh-label')) }}
+	<div class="row collapse prefix-radius">
+		<div class="small-4 columns">
+			<span class="prefix">First Name</span>
 		</div>
-		<div class="large-10 small-12 columns">
+		<div class="small-8 columns">
 			{{ Form::text('first_name', null, array()) }}
 		</div>
 	</div>
-	<div class="row">
-		<div class="large-2 small-12 columns">
-			{{ Form::label('spouse_name', 'Spouse Name', array('class' => 'oh-label')) }}
+	<div class="row collapse prefix-radius">
+		<div class="small-4 columns">
+			<span class="prefix">Spouse Name</span>
 		</div>
-		<div class="large-10 small-12 columns">
+		<div class="small-8 columns">
 			{{ Form::text('spouse_name', null, array()) }}
 		</div>
 	</div>
-	<div class="row">
-		<div class="large-2 small-12 columns">
-			{{ Form::label('last_name', 'Last Name', array('class' => 'oh-label')) }}
+	<div class="row collapse prefix-radius">
+		<div class="small-4 columns">
+			<span class="prefix">Last Name</span>
 		</div>
-		<div class="large-10 small-12 columns">
+		<div class="small-8 columns">
 			{{ Form::text('last_name', null, array()) }}
 		</div>
 	</div>
-	<div class="row">
-		<div class="large-2 small-12 columns">
-			{{ Form::label('address', 'Address', array('class' => 'oh-label')) }}
+	<div class="row collapse prefix-radius">
+		<div class="small-4 columns">
+			<span class="prefix">Address</span>
 		</div>
-		<div class="large-10 small-12 columns">
+		<div class="small-8 columns">
 			{{ Form::text('address', null, array()) }}
 		</div>
 	</div>
-	<div class="row">
-		<div class="large-2 small-12 columns">
-			{{ Form::label('zipcode', 'Zipcode', array('class' => 'oh-label')) }}
+	<div class="row collapse prefix-radius">
+		<div class="small-4 columns">
+			<span class="prefix">Zipcode</span>
 		</div>
-		<div class="large-10 small-12 columns">
+		<div class="small-8 columns">
 			{{ Form::text('zipcode', null, array()) }}
 		</div>
 	</div>

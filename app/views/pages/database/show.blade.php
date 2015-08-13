@@ -1,6 +1,6 @@
 @extends('layouts.database')
 @section('content')
-<div class="row oh-form-group">
+<div class="row panel">
 	@foreach($results as $key => $value)
 	<div class="row">
 		<div class="medium-3 small-12 columns">

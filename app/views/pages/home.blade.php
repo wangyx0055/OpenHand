@@ -2,7 +2,7 @@
 @section('content')
 <div class="row">
 	<ul class="accordion" data-accordion>
-		<li class="accordion-navigation oh-accordion">
+		<li class="accordion-navigation ">
 			<a href="#panel1">What is Open Hand?</a>
 			<div id="panel1" class="content">
 				Open Hand is a place where the working poor, and those on fixed incomes, can come for food and solace. 
@@ -19,7 +19,7 @@
 				We exist for one reason only: to help those in need with the love and compassion of the Biblical Jesus, and to show them that He loves them, too.
 			</div>
 		</li>
-		<li class="accordion-navigation oh-accordion">
+		<li class="accordion-navigation ">
 			<a href="#panel2">Where and when do we distribute?</a>
 			<div id="panel2" class="content">
 				Food is distributed for 3 hours on both the 2nd and 4th Saturday of every month.</br>
@@ -31,7 +31,7 @@
 				<b>Riverdale, UT 84405</b></br>
 			</div>
 		</li>
-		<li class="accordion-navigation oh-accordion">
+		<li class="accordion-navigation ">
 			<a href="#panel3">Do I need to bring anything to get help?</a>
 			<div id="panel3" class="content">
 				<ul>
@@ -42,7 +42,7 @@
 				</ul>
 			</div>
 		</li>
-		<li class="accordion-navigation oh-accordion">
+		<li class="accordion-navigation ">
 			<a href="#panel4">What can I do to help Open Hand?</a>
 			<div id="panel4" class="content">
 				There are dozens of different jobs to do and we need your help!

@@ -6,8 +6,8 @@
 
 <title>{{ $pageTitle }}</title>
 
-{{ HTML::style('css/foundation.css'); }}
-{{ HTML::style('css/custom.css'); }}
+{{ HTML::style('css/foundation.min.css') }}
+{{ HTML::style('css/app.css') }}
 <link rel="shortcut icon" href="http://www.openhandministry.org/favicon.ico" type="image/x-icon" />
 
 {{ HTML::script('js/vendor/jquery.js') }}
