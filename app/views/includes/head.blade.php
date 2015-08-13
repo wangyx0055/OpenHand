@@ -10,6 +10,7 @@
 {{ HTML::style('css/custom.css'); }}
 <link rel="shortcut icon" href="http://www.openhandministry.org/favicon.ico" type="image/x-icon" />
 
-{{ HTML::script('js/vendor/modernizr.js') }}
+{{ HTML::script('js/vendor/jquery.js') }}
+{{ HTML::script('js/foundation.min.js') }}
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript">stLight.options({publisher: "35b7cce0-286f-439b-8e8a-3cfa858ec94e", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>

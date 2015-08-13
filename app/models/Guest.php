@@ -2,5 +2,5 @@
 
 class Guest extends Eloquent
 {
-	
+
 }

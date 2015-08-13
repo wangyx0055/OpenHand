@@ -43,7 +43,6 @@ class GuestController extends BaseController
 			$guest->spouse_name = Input::get('spouse_name');
 			$guest->address = Input::get('address');
 			$guest->zipcode = Input::get('zipcode');
-			$guest->note = Input::get('note');
 			
 			$guest->save();
 			
@@ -101,7 +100,6 @@ class GuestController extends BaseController
 			$guest->address = Input::get('address');
 			$guest->zipcode = Input::get('zipcode');
 			$guest->last_visit = date("Y-m-d H:i:s");
-			$guest->note = Input::get('note');
 			
 			$guest->save();
 			
@@ -137,7 +135,34 @@ class GuestController extends BaseController
 	}
 	
 	/*
-	Name: addNote
-	Purpose: add note to a guest
+	name: addNote
+	purpose: add a new note
 	*/
+	public function addNote($id)
+	{
+		if (Note::find($id)) {
+			// find old note value
+			$note = Note::find($id);
+
+			// get data from form
+			$note->note = Input::get('note');
+			$note->guest_id = $id;
+
+			// save note
+			$note->save();
+		} else {
+			// declare new note
+			$note = new Note;
+
+			// get data from form
+			$note->note = Input::get('note');
+			$note->guest_id = $id;
+
+			// save note
+			$note->save();
+		}
+		
+		return Redirect::to('/database/search')
+			->with('pageTitle', 'Volunteer Only');
+	}
 }

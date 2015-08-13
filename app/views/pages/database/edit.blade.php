@@ -47,14 +47,6 @@
 			{{ Form::text('zipcode', null, array()) }}
 		</div>
 	</div>
-	<div class="row">
-		<div class="large-2 small-12 columns">
-			{{ Form::label('note', 'Note', array('class' => 'oh-label')) }}
-		</div>
-		<div class="large-10 small-12 columns">
-			{{ Form::text('note', null, array('placeholder' => 'Leave blank unless you have a note to place')) }}
-		</div>
-	</div>
 	@if (date('Y-m-d', strtotime($guest->last_visit)) != date('Y-m-d', time()))
 	<div class="row">
 		<div class="large-2 small-12 columns">

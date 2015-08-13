@@ -61,15 +61,19 @@ class UserController extends BaseController
 		$search = Input::get('search');
 		
 		if (Input::get('searchBy') == 0) { // search database for id with corresponding last_name value
-			/*$results = Person::where(function ($query) use ($search) {
-				$query->where('last_name', 'LIKE', '%' . $search . '%');
-			})->where('person_type', '=', 2)->get();*/
-			$results = $results = Person::getByLastName($search)->get();
+			$results = DB::table('people')
+			->join('guests', 'people.id', '=', 'guests.person_id')
+			->select('guests.id', 'people.first_name', 'people.last_name')
+			->where('last_name', 'LIKE', '%' . $search . '%')
+			->where('people.person_type', '=', 2)
+			->get();
 		} else if (Input::get('searchBy') == 1) { // search database for id with corresponding first_name value
-			/*$results = Person::where(function ($query) use ($search) {
-				$query->where('first_name', 'LIKE', '%' . $search . '%');
-			})->where('person_type', '=', 2)->get();*/
-			$results = $results = Person::getByFirstName($search)->get();
+			$results = DB::table('people')
+			->join('guests', 'people.id', '=', 'guests.person_id')
+			->select('guests.id', 'people.first_name', 'people.last_name')
+			->where('first_name', 'LIKE', '%' . $search . '%')
+			->where('people.person_type', '=', 2)
+			->get();
 		} 
 		
 		return View::make('pages.database.search')

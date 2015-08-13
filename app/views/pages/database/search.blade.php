@@ -30,13 +30,21 @@
 				@if (date('Y-m-d', strtotime(DB::table('guests')->where('person_id', '=', $value->id)->pluck('last_visit'))) == date('Y-m-d', time()))
 				{{ Form::label('', 'Checked-in at ' . date('H:i:s', strtotime(DB::table('guests')->where('person_id', '=', $value->id)->pluck('last_visit'))), array('class' => 'oh-label-small')) }}
 				@else
-				{{ Form::submit('Check-in', array('class' => 'button small')) }}
+				{{ Form::submit('Check-in', array('class' => 'button tiny')) }}
 				@endif
 			{{ Form::close() }}
 		</div>
 		<div class="medium-2 small-12 columns">
 			<a class="button tiny" href="{{ URL::to('guests/' . $value->id . '/edit') }}">Edit</a>
 		</div>
+		{{ Form::open(array('action' => array('guests.addNote', $value->id))) }}
+			<div class="medium-10 small-12 columns">
+				{{ Form::text('note', DB::table('notes')->where('guest_id', '=', $value->id)->pluck('note'), array()) }}
+			</div>
+			<div class="medium-2 small-12 columns">
+				{{ Form::submit('Add Note', array('class' => 'button tiny')) }}
+			</div>
+		{{ Form::close() }}
 	</div>
 	@endforeach
 	<div class="small-12 columns">

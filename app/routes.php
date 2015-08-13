@@ -91,6 +91,21 @@ Route::get('/login', function()
 });
 
 /*
+Purpose: Redirect to add to note page
+Uses: app/views/pages/database/note/add.blade.php
+*/
+/*Route::get('/database/note/add', function()
+{
+	if (Auth::check()) { // if valid user logged in
+		return View::make('pages.database.note.add')
+			->with('pageTitle', 'Volunteer Only');
+	} else { // if valid user is not logged in
+		return View::make('pages.login')
+			->with('pageTitle', 'Volunteer Login');
+	}
+});*/
+
+/*
 Purpose: Redirect to add to database page
 Uses: app/views/pages/database/add.blade.php
 */
@@ -104,6 +119,21 @@ Route::get('/database/add', function()
 			->with('pageTitle', 'Volunteer Login');
 	}
 });
+
+/*
+Purpose: Redirect to edit guest page
+Uses: app/views/pages/database/edit.blade.php
+*/
+/*Route::get('/database/edit', function()
+{
+	if (Auth::check()) { // if valid admin logged in
+		return View::make('pages.database.edit')
+			->with('pageTitle', 'Volunteer Only');
+	} else { // if valid user is not logged in
+		return View::make('pages.login')
+			->with('pageTitle', 'Volunteer Login');
+	}
+});*/
 
 /*
 Purpose: Redirect to search database page
@@ -192,7 +222,7 @@ Route::get('/database/admin/add', function()
 Purpose: Redirect to view admins view edit user page
 Uses: app/views/pages/database/admin/edit.blade.php
 */
-Route::get('/database/admin/edit', function()
+/*Route::get('/database/admin/edit', function()
 {
 	if (Auth::check() && Auth::user()->user_type == 2) { // if valid admin logged in
 		return View::make('pages.database.admin.admin-edit')
@@ -205,7 +235,7 @@ Route::get('/database/admin/edit', function()
 		return View::make('pages.login')
 			->with('pageTitle', 'Volunteer Login');
 	}
-});
+});*/
 
 /*
 Purpose: Redirect to history database page
@@ -265,10 +295,22 @@ Uses: app/controllers/GuestController.php
 Route::post('guest/{id}/check-in', array('as' => 'guests.checkIn', 'uses' => 'GuestController@checkIn'));
 
 /*
+purpose: add a new note for guest
+uses: app/controllers/NoteController.php
+*/
+Route::post('guest/note/{id}', array('as' => 'guests.addNote', 'uses' => 'GuestController@addNote'));
+
+/*
 Purpose: Connect GuestController to use function inside of it
 Uses: app/controllers/GuestController.php
 */
 Route::resource('guests', 'GuestController');
+
+/*
+Purpose: Connect NoteController to use function inside of it
+Uses: app/controllers/NoteController.php
+*/
+Route::resource('notes', 'NoteController');
 
 /*
 Purpose: Connect UserController to use function inside of it
