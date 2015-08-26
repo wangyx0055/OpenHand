@@ -8,18 +8,18 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="small-12 columns">
-			{{ Form::label('email', 'Email Address', array('class' => 'oh-label')) }}
+		<div class="small-4 columns">
+			<span class="prefix">Email</span>
 		</div>
-		<div class="small-12 columns">
+		<div class="small-8 columns">
 			{{ Form::text('email', Input::old('email'), array('class' => 'form-control', 'placeholder' => 'awesome@awesome.com')) }}
 		</div>
 	</div>
 	<div class="row">
-		<div class="small-12 columns">
-			{{ Form::label('password', 'Password', array('class' => 'oh-label')) }}
+		<div class="small-4 columns">
+			<span class="prefix">Password</span>
 		</div>
-		<div class="small-12 columns">
+		<div class="small-8 columns">
 			{{ Form::password('password', array('class' => 'form-control')) }}
 		</div>
 	</div>

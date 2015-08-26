@@ -310,7 +310,7 @@ Route::resource('guests', 'GuestController');
 Purpose: Connect NoteController to use function inside of it
 Uses: app/controllers/NoteController.php
 */
-Route::resource('notes', 'NoteController');
+/*Route::resource('notes', 'NoteController');*/
 
 /*
 Purpose: Connect UserController to use function inside of it
@@ -329,4 +329,3 @@ Purpose: Process history search
 Uses: app/controllers/UserController.php
 */
 Route::post('history_search', array('uses' => 'UserController@doHistorySearch'));
-
