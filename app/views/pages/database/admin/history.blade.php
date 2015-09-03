@@ -45,5 +45,11 @@
 		Number of guests between {{ $beginTime }} and {{ $endTime }}: {{ $results }}
 	</div>
 </div>
+@else
+<div class="row panel">
+	<div class="small-12 columns">
+		Number of guests this month: {{ $thisMonth }}
+	</div>
+</div>
 @endif
 @stop

@@ -110,6 +110,12 @@ class UserController extends BaseController
 		// get input from form
 		$beginTime = Input::get('from_year') . '-' . Input::get('from_month');
 		$endTime = Input::get('to_year') . '-' . Input::get('to_month');
+		
+		// get last month 
+		//$lastMonth = GuestHistory::getGuestCount(date('Y-m', strtotime('Y-m' . " -1 month")), date('Y-m', strtotime('Y-m' . " -1 month")))->count();
+		
+		// get current month
+		//$thisMonth = GuestHistory::getGuestCount(date('Y-m'), date('Y-m'))->count();
 
 		$results = GuestHistory::getGuestCount($beginTime, $endTime)->count();
 	

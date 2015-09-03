@@ -261,10 +261,18 @@ Route::get('/database/admin/history', function()
 	
 	$results = '';
 	
+	// get last month 
+	//$lastMonth = GuestHistory::getGuestCount(date('Y-m', strtotime('Y-m' . " - 1 month")), date('Y-m', strtotime('Y-m' . " - 1 month")))->count();
+		
+	// get current month
+	$thisMonth = GuestHistory::getGuestCount(date('Y-m'), date('Y-m'))->count();
+	
 	if (Auth::check() && Auth::user()->user_type == 2) { // if valid admin logged in
 		return View::make('pages.database.admin.history')
 			->with('years', $stringOfYears)
 			->with('results', $results)
+			//->with('lastMonth', $lastMonth)
+			->with('thisMonth', $thisMonth)
 			->with('pageTitle', 'Admin Only');
 	} else if (Auth::check()) { // if valid user logged in
 		return View::make('pages.database.search')
