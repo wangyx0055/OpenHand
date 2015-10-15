@@ -57,7 +57,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'forge',
+			'database'  => 'homestead',
 			'username'  => 'homestead',
 			'password'  => 'secret',
 			'charset'   => 'utf8',
