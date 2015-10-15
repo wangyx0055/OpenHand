@@ -70,7 +70,7 @@ return array(
 			'host'     => 'localhost',
 			'database' => 'forge',
 			'username' => 'forge',
-			'password' => '',
+			'password' => 'moB7dNVcb9i5E49CcohF',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 			'schema'   => 'public',
